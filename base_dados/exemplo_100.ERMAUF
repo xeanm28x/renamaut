@@ -1,0 +1,1304 @@
+{
+  "dados": [
+    {
+       "renamaut": "DRNLOGAMZN3B5937",
+       "fab": "87273419966709",
+       "mod": "Amazon Fulfillment Bot",
+       "cat": "103456",
+       "apl": "909012",
+       "ano": 2024,
+       "resp": "35387996552150",
+       "loc_base": {
+          "cidade": "Rio de Janeiro",
+          "uf": "RJ"
+        }
+    },
+    {
+       "renamaut": "EDUEDUUBTEDCF232",
+       "fab": "84754158333545",
+       "mod": "UBTECH Alpha",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2020,
+       "resp": "43720896196",
+       "loc_base": {
+          "cidade": "Curitiba",
+          "uf": "PR"
+        }
+    },
+    {
+       "renamaut": "EDUPARSONY66781E",
+       "fab": "23006226066899",
+       "mod": "Sony Aibo Performer",
+       "cat": "661626",
+       "apl": "643278",
+       "ano": 2020,
+       "resp": "11570044983606",
+       "loc_base": {
+          "cidade": "Porto Alegre",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "DELDELAMZN83A168",
+       "fab": "87273419966709",
+       "mod": "Amazon Scout",
+       "cat": "212972",
+       "apl": "120923",
+       "ano": 2022,
+       "resp": "38207968940",
+       "loc_base": {
+          "cidade": "São Paulo",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "VEITRPTESL4804D2",
+       "fab": "34151088472686",
+       "mod": "Tesla Model S Plaid",
+       "cat": "250123",
+       "apl": "854301",
+       "ano": 2018,
+       "resp": "08607693212",
+       "loc_base": {
+          "cidade": "Manaus",
+          "uf": "AM"
+        }
+    },
+    {
+       "renamaut": "VEITRPGOGL2494D3",
+       "fab": "89907719298261",
+       "mod": "Waymo Jaguar I-PACE",
+       "cat": "250123",
+       "apl": "854301",
+       "ano": 2024,
+       "resp": "90488193825783",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "CLNDOMCANX898848",
+       "fab": "51356001885548",
+       "mod": "Canon HomeBot",
+       "cat": "541482",
+       "apl": "606789",
+       "ano": 2022,
+       "resp": "44673466797196",
+       "loc_base": {
+          "cidade": "Fortaleza",
+          "uf": "CE"
+        }
+    },
+    {
+       "renamaut": "EDUEDUSTMN287153",
+       "fab": "40174128723708",
+       "mod": "STM EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2023,
+       "resp": "42464680109",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "SWISEASEAG59437E",
+       "fab": "74538319746421",
+       "mod": "Seagate CoralWatcher",
+       "cat": "342310",
+       "apl": "954412",
+       "ano": 2018,
+       "resp": "22243752123",
+       "loc_base": {
+          "cidade": "Santos",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "DELLOGSTAR053028",
+       "fab": "65221148657907",
+       "mod": "Starship Logistics Bot",
+       "cat": "212972",
+       "apl": "909012",
+       "ano": 2019,
+       "resp": "54565616386",
+       "loc_base": {
+          "cidade": "Curitiba",
+          "uf": "PR"
+        }
+    },
+    {
+       "renamaut": "UGVMINTXIN774089",
+       "fab": "48306298294834",
+       "mod": "TI Mining Rover",
+       "cat": "270844",
+       "apl": "309345",
+       "ano": 2019,
+       "resp": "47289297792",
+       "loc_base": {
+          "cidade": "Palmas",
+          "uf": "TO"
+        }
+    },
+    {
+       "renamaut": "SECSGPRHTXE14722",
+       "fab": "14144616036501",
+       "mod": "Red Hat PortGuard",
+       "cat": "351594",
+       "apl": "776089",
+       "ano": 2020,
+       "resp": "45213482708",
+       "loc_base": {
+          "cidade": "Vitória",
+          "uf": "ES"
+        }
+    },
+    {
+       "renamaut": "EDUPARSONY941723",
+       "fab": "23006226066899",
+       "mod": "Sony Aibo Performer",
+       "cat": "661626",
+       "apl": "643278",
+       "ano": 2020,
+       "resp": "88931357796",
+       "loc_base": {
+          "cidade": "Belo Horizonte",
+          "uf": "MG"
+        }
+    },
+    {
+       "renamaut": "WALSECTREE3E7A37",
+       "fab": "86747523466820",
+       "mod": "Unitree B1",
+       "cat": "222186",
+       "apl": "707890",
+       "ano": 2019,
+       "resp": "25035760871",
+       "loc_base": {
+          "cidade": "São Paulo",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "UGVMINTXIN933293",
+       "fab": "48306298294834",
+       "mod": "TI Mining Rover",
+       "cat": "270844",
+       "apl": "309345",
+       "ano": 2020,
+       "resp": "88554726073",
+       "loc_base": {
+          "cidade": "Parauapebas",
+          "uf": "PA"
+        }
+    },
+    {
+       "renamaut": "EDUEDUTXIN583893",
+       "fab": "48306298294834",
+       "mod": "TI EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2024,
+       "resp": "52742491055122",
+       "loc_base": {
+          "cidade": "Recife",
+          "uf": "PE"
+        }
+    },
+    {
+       "renamaut": "EDUEDUSTMN521987",
+       "fab": "40174128723708",
+       "mod": "STM EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2022,
+       "resp": "57918277529418",
+       "loc_base": {
+          "cidade": "Belo Horizonte",
+          "uf": "MG"
+        }
+    },
+    {
+       "renamaut": "DRNRCADJIX4637F6",
+       "fab": "01844811227268",
+       "mod": "DJI Inspire 2",
+       "cat": "103456",
+       "apl": "509567",
+       "ano": 2017,
+       "resp": "52825013610007",
+       "loc_base": {
+          "cidade": "Porto Alegre",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "DRNFLYSONY790826",
+       "fab": "23006226066899",
+       "mod": "Sony SkyEye",
+       "cat": "103456",
+       "apl": "610578",
+       "ano": 2024,
+       "resp": "90298218350494",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "UGVINSRHTXE65873",
+       "fab": "14144616036501",
+       "mod": "Red Hat Industrial Rover",
+       "cat": "270844",
+       "apl": "404567",
+       "ano": 2017,
+       "resp": "38725019929",
+       "loc_base": {
+          "cidade": "Campinas",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "EDUTOUSAMS652124",
+       "fab": "52011502428146",
+       "mod": "Samsung TourMate",
+       "cat": "661626",
+       "apl": "621478",
+       "ano": 2020,
+       "resp": "63663947654992",
+       "loc_base": {
+          "cidade": "São Paulo",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "EDUPARHANS310672",
+       "fab": "16167009479060",
+       "mod": "Zeno",
+       "cat": "661626",
+       "apl": "643278",
+       "ano": 2020,
+       "resp": "64197547755099",
+       "loc_base": {
+          "cidade": "Porto Alegre",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "EDUEDULENO364220",
+       "fab": "69088689766823",
+       "mod": "Lenovo EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2020,
+       "resp": "27525426166781",
+       "loc_base": {
+          "cidade": "Belo Horizonte",
+          "uf": "MG"
+        }
+    },
+    {
+       "renamaut": "EDUTOUSOFT305270",
+       "fab": "50752355582058",
+       "mod": "SoftBank Pepper",
+       "cat": "661626",
+       "apl": "621478",
+       "ano": 2019,
+       "resp": "40337167265",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "UUVSUBIROB087004",
+       "fab": "38771863955453",
+       "mod": "iRobot Seaglider",
+       "cat": "380966",
+       "apl": "510467",
+       "ano": 2022,
+       "resp": "44345401371564",
+       "loc_base": {
+          "cidade": "Manaus",
+          "uf": "AM"
+        }
+    },
+    {
+       "renamaut": "DRNRCAERIC66445B",
+       "fab": "66412379578580",
+       "mod": "Ericsson Recon Scout",
+       "cat": "103456",
+       "apl": "509567",
+       "ano": 2022,
+       "resp": "37483794631",
+       "loc_base": {
+          "cidade": "São Paulo",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "VEIAGPGOGL918007",
+       "fab": "89907719298261",
+       "mod": "Waymo Agricultural Rover",
+       "cat": "250123",
+       "apl": "101234",
+       "ano": 2020,
+       "resp": "08729219302",
+       "loc_base": {
+          "cidade": "Dourados",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "DRNFLYSONYE07678",
+       "fab": "23006226066899",
+       "mod": "Sony SkyEye",
+       "cat": "103456",
+       "apl": "610578",
+       "ano": 2021,
+       "resp": "35134458227",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "EDUEDUNECXD57879",
+       "fab": "72175121636560",
+       "mod": "NEC EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2020,
+       "resp": "81699310459",
+       "loc_base": {
+          "cidade": "São Paulo",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "EDUEDUORCL116165",
+       "fab": "16683422231892",
+       "mod": "Oracle EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2024,
+       "resp": "51135986401",
+       "loc_base": {
+          "cidade": "Curitiba",
+          "uf": "PR"
+        }
+    },
+    {
+       "renamaut": "EDUPARMETA028666",
+       "fab": "72417958507760",
+       "mod": "Meta PerformanceBot",
+       "cat": "661626",
+       "apl": "643278",
+       "ano": 2020,
+       "resp": "84399710207812",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "MEDASMSURG618A74",
+       "fab": "48812222821686",
+       "mod": "da Vinci Surgical System",
+       "cat": "421257",
+       "apl": "505678",
+       "ano": 2022,
+       "resp": "75433076925600",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "EDUEDUXERO824217",
+       "fab": "72190305388171",
+       "mod": "Xerox EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2017,
+       "resp": "27341043638434",
+       "loc_base": {
+          "cidade": "Curitiba",
+          "uf": "PR"
+        }
+    },
+    {
+       "renamaut": "CLNDOMPANA234934",
+       "fab": "02638675849051",
+       "mod": "Panasonic HomeBot",
+       "cat": "541482",
+       "apl": "606789",
+       "ano": 2022,
+       "resp": "09858011075",
+       "loc_base": {
+          "cidade": "Rio de Janeiro",
+          "uf": "RJ"
+        }
+    },
+    {
+       "renamaut": "EDUEDUAMD02026A9",
+       "fab": "27903795038258",
+       "mod": "AMD EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2024,
+       "resp": "16148679229785",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "UAVFLYMSFT631672",
+       "fab": "62728099663719",
+       "mod": "Microsoft Azure Drone",
+       "cat": "160722",
+       "apl": "610578",
+       "ano": 2018,
+       "resp": "27525426166781",
+       "loc_base": {
+          "cidade": "Belém",
+          "uf": "PA"
+        }
+    },
+    {
+       "renamaut": "UAVINSLOCK33C2E3",
+       "fab": "48318319248210",
+       "mod": "Lockheed Martin Indago",
+       "cat": "160722",
+       "apl": "404567",
+       "ano": 2022,
+       "resp": "90258020392724",
+       "loc_base": {
+          "cidade": "Anápolis",
+          "uf": "GO"
+        }
+    },
+    {
+       "renamaut": "UGVINSHITT106230",
+       "fab": "99759638043306",
+       "mod": "Hitachi InspectionBot",
+       "cat": "270844",
+       "apl": "404567",
+       "ano": 2024,
+       "resp": "51165704870",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "DELDELAMZN87058E",
+       "fab": "87273419966709",
+       "mod": "Amazon Scout",
+       "cat": "212972",
+       "apl": "120923",
+       "ano": 2018,
+       "resp": "68383989407",
+       "loc_base": {
+          "cidade": "Fortaleza",
+          "uf": "CE"
+        }
+    },
+    {
+       "renamaut": "EDUEDUORCL1F7226",
+       "fab": "16683422231892",
+       "mod": "Oracle EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2021,
+       "resp": "79274198156402",
+       "loc_base": {
+          "cidade": "São Paulo",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "EDUEDUFUJX39B30E",
+       "fab": "47749271857092",
+       "mod": "Fujitsu EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2024,
+       "resp": "13489681096",
+       "loc_base": {
+          "cidade": "Porto Alegre",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "DRNFLYAPPL027542",
+       "fab": "04274734429035",
+       "mod": "Apple AirScout",
+       "cat": "103456",
+       "apl": "610578",
+       "ano": 2024,
+       "resp": "88144251087610",
+       "loc_base": {
+          "cidade": "Fortaleza",
+          "uf": "CE"
+        }
+    },
+    {
+       "renamaut": "UAVAGPINTCCC1767",
+       "fab": "33110636693248",
+       "mod": "Intel AgriDrone",
+       "cat": "160722",
+       "apl": "101234",
+       "ano": 2021,
+       "resp": "09297561260162",
+       "loc_base": {
+          "cidade": "Passo Fundo",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "DRNFLYPANA12B803",
+       "fab": "02638675849051",
+       "mod": "Panasonic SkyGuard",
+       "cat": "103456",
+       "apl": "610578",
+       "ano": 2022,
+       "resp": "61576574806",
+       "loc_base": {
+          "cidade": "Manaus",
+          "uf": "AM"
+        }
+    },
+    {
+       "renamaut": "UGVMINTXINC89D23",
+       "fab": "48306298294834",
+       "mod": "TI Mining Rover",
+       "cat": "270844",
+       "apl": "309345",
+       "ano": 2018,
+       "resp": "51185263454",
+       "loc_base": {
+          "cidade": "Itabira",
+          "uf": "MG"
+        }
+    },
+    {
+       "renamaut": "UAVFLYLOCK96426D",
+       "fab": "48318319248210",
+       "mod": "Lockheed Martin SkyGuard",
+       "cat": "160722",
+       "apl": "610578",
+       "ano": 2022,
+       "resp": "04380085880",
+       "loc_base": {
+          "cidade": "Rio de Janeiro",
+          "uf": "RJ"
+        }
+    },
+    {
+       "renamaut": "UAVFLYMSFT695837",
+       "fab": "62728099663719",
+       "mod": "Microsoft Azure Drone",
+       "cat": "160722",
+       "apl": "610578",
+       "ano": 2022,
+       "resp": "32163867404",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "EDUEDUIBMX235182",
+       "fab": "31436983377400",
+       "mod": "IBM EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2021,
+       "resp": "13230036220",
+       "loc_base": {
+          "cidade": "Rio de Janeiro",
+          "uf": "RJ"
+        }
+    },
+    {
+       "renamaut": "EDUEDUDELL9637F7",
+       "fab": "60401716421900",
+       "mod": "Dell EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2018,
+       "resp": "23472407301",
+       "loc_base": {
+          "cidade": "Porto Alegre",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "EDUEDUIBMX0589D1",
+       "fab": "31436983377400",
+       "mod": "IBM EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2020,
+       "resp": "05362870661",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "VEIAGPTESL330A02",
+       "fab": "34151088472686",
+       "mod": "Tesla AgriBot",
+       "cat": "250123",
+       "apl": "101234",
+       "ano": 2020,
+       "resp": "70738123110",
+       "loc_base": {
+          "cidade": "Londrina",
+          "uf": "PR"
+        }
+    },
+    {
+       "renamaut": "UGVCONDELL530579",
+       "fab": "60401716421900",
+       "mod": "Dell Construction Rover",
+       "cat": "270844",
+       "apl": "409456",
+       "ano": 2019,
+       "resp": "96260664230",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "CLNDOMCANX457740",
+       "fab": "51356001885548",
+       "mod": "Canon HomeBot",
+       "cat": "541482",
+       "apl": "606789",
+       "ano": 2022,
+       "resp": "80770429036207",
+       "loc_base": {
+          "cidade": "Belo Horizonte",
+          "uf": "MG"
+        }
+    },
+    {
+       "renamaut": "EDUTOUCANX629096",
+       "fab": "51356001885548",
+       "mod": "Canon TourMate",
+       "cat": "661626",
+       "apl": "621478",
+       "ano": 2019,
+       "resp": "12227531335542",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "EDUTOUAPPL352195",
+       "fab": "04274734429035",
+       "mod": "Apple SiriBot",
+       "cat": "661626",
+       "apl": "621478",
+       "ano": 2020,
+       "resp": "09886042486",
+       "loc_base": {
+          "cidade": "Porto Alegre",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "UAVMINLOCK21787D",
+       "fab": "48318319248210",
+       "mod": "Lockheed Martin Mining UAV",
+       "cat": "160722",
+       "apl": "309345",
+       "ano": 2022,
+       "resp": "56831515447095",
+       "loc_base": {
+          "cidade": "Macapá",
+          "uf": "AP"
+        }
+    },
+    {
+       "renamaut": "SWISEASEAG733181",
+       "fab": "74538319746421",
+       "mod": "Seagate CoralWatcher",
+       "cat": "342310",
+       "apl": "954412",
+       "ano": 2019,
+       "resp": "60901165131",
+       "loc_base": {
+          "cidade": "Porto Alegre",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "SECPOLNTAP73EB75",
+       "fab": "69003945242175",
+       "mod": "NetApp UrbanGuard",
+       "cat": "351594",
+       "apl": "110023",
+       "ano": 2017,
+       "resp": "60160024316870",
+       "loc_base": {
+          "cidade": "Recife",
+          "uf": "PE"
+        }
+    },
+    {
+       "renamaut": "AGRFORAGCO36D696",
+       "fab": "34250888779202",
+       "mod": "AGCO Reforestation Rover",
+       "cat": "294646",
+       "apl": "632378",
+       "ano": 2017,
+       "resp": "46963094160569",
+       "loc_base": {
+          "cidade": "Anápolis",
+          "uf": "GO"
+        }
+    },
+    {
+       "renamaut": "SWISUBBROB5C8738",
+       "fab": "60466631188172",
+       "mod": "Blue Robotics BlueROV2",
+       "cat": "342310",
+       "apl": "510467",
+       "ano": 2017,
+       "resp": "88200347192",
+       "loc_base": {
+          "cidade": "Rio Branco",
+          "uf": "AC"
+        }
+    },
+    {
+       "renamaut": "MEDASMMETAB70934",
+       "fab": "72417958507760",
+       "mod": "Meta HealthBot",
+       "cat": "421257",
+       "apl": "505678",
+       "ano": 2018,
+       "resp": "66225166939",
+       "loc_base": {
+          "cidade": "Brasília",
+          "uf": "DF"
+        }
+    },
+    {
+       "renamaut": "CLNDOMSONY4D2799",
+       "fab": "23006226066899",
+       "mod": "Sony AiRo",
+       "cat": "541482",
+       "apl": "606789",
+       "ano": 2022,
+       "resp": "25458778591780",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "EDUEDUHPEX60359D",
+       "fab": "29461454264475",
+       "mod": "HPE EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2021,
+       "resp": "29024144626581",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "UUVSEAWDIG761E13",
+       "fab": "49092001630031",
+       "mod": "WD CoralMapper",
+       "cat": "380966",
+       "apl": "954412",
+       "ano": 2018,
+       "resp": "44088513259744",
+       "loc_base": {
+          "cidade": "Vitória",
+          "uf": "ES"
+        }
+    },
+    {
+       "renamaut": "MEDASMSURG171FE9",
+       "fab": "48812222821686",
+       "mod": "da Vinci Surgical System",
+       "cat": "421257",
+       "apl": "505678",
+       "ano": 2020,
+       "resp": "33831693121921",
+       "loc_base": {
+          "cidade": "Fortaleza",
+          "uf": "CE"
+        }
+    },
+    {
+       "renamaut": "EDUEDUANLO982317",
+       "fab": "43470689236671",
+       "mod": "ADI EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2020,
+       "resp": "78751563266486",
+       "loc_base": {
+          "cidade": "Curitiba",
+          "uf": "PR"
+        }
+    },
+    {
+       "renamaut": "UGVINSTOSH11B566",
+       "fab": "02869738021970",
+       "mod": "Toshiba InspectionBot",
+       "cat": "270844",
+       "apl": "404567",
+       "ano": 2018,
+       "resp": "80021353596948",
+       "loc_base": {
+          "cidade": "Goiânia",
+          "uf": "GO"
+        }
+    },
+    {
+       "renamaut": "UGVCONDELL420088",
+       "fab": "60401716421900",
+       "mod": "Dell Construction Rover",
+       "cat": "270844",
+       "apl": "409456",
+       "ano": 2021,
+       "resp": "14714889265217",
+       "loc_base": {
+          "cidade": "Joinville",
+          "uf": "SC"
+        }
+    },
+    {
+       "renamaut": "UGVRCTCROB318619",
+       "fab": "21995185242446",
+       "mod": "Clearpath Husky",
+       "cat": "270844",
+       "apl": "242834",
+       "ano": 2017,
+       "resp": "27525426166781",
+       "loc_base": {
+          "cidade": "Fortaleza",
+          "uf": "CE"
+        }
+    },
+    {
+       "renamaut": "EDUEDUASUS571125",
+       "fab": "92359736837370",
+       "mod": "ASUS Zenbo",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2024,
+       "resp": "97106114239376",
+       "loc_base": {
+          "cidade": "Recife",
+          "uf": "PE"
+        }
+    },
+    {
+       "renamaut": "DRNFLYASUS703173",
+       "fab": "92359736837370",
+       "mod": "ASUS SkyEye",
+       "cat": "103456",
+       "apl": "610578",
+       "ano": 2020,
+       "resp": "54514639133",
+       "loc_base": {
+          "cidade": "Brasília",
+          "uf": "DF"
+        }
+    },
+    {
+       "renamaut": "DRNFLYDJIX18F715",
+       "fab": "01844811227268",
+       "mod": "DJI Matrice 300 RTK",
+       "cat": "103456",
+       "apl": "610578",
+       "ano": 2024,
+       "resp": "38472185318541",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "DRNFLYAPPL988328",
+       "fab": "04274734429035",
+       "mod": "Apple AirScout",
+       "cat": "103456",
+       "apl": "610578",
+       "ano": 2024,
+       "resp": "59880108145485",
+       "loc_base": {
+          "cidade": "Manaus",
+          "uf": "AM"
+        }
+    },
+    {
+       "renamaut": "EDUEDUHITT51973E",
+       "fab": "99759638043306",
+       "mod": "Hitachi EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2021,
+       "resp": "93813072445335",
+       "loc_base": {
+          "cidade": "Belo Horizonte",
+          "uf": "MG"
+        }
+    },
+    {
+       "renamaut": "EDUTOUEPSP214E30",
+       "fab": "26137196019416",
+       "mod": "Epson TourMate",
+       "cat": "661626",
+       "apl": "621478",
+       "ano": 2022,
+       "resp": "49042298430",
+       "loc_base": {
+          "cidade": "Florianópolis",
+          "uf": "SC"
+        }
+    },
+    {
+       "renamaut": "DRNFLYASUS6E7875",
+       "fab": "92359736837370",
+       "mod": "ASUS SkyEye",
+       "cat": "103456",
+       "apl": "610578",
+       "ano": 2024,
+       "resp": "30620160780",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "CLNDOMASUS966239",
+       "fab": "92359736837370",
+       "mod": "ASUS HomeBot",
+       "cat": "541482",
+       "apl": "606789",
+       "ano": 2020,
+       "resp": "76267706419",
+       "loc_base": {
+          "cidade": "Manaus",
+          "uf": "AM"
+        }
+    },
+    {
+       "renamaut": "DRNLOGQUAL651520",
+       "fab": "72656147707052",
+       "mod": "Qualcomm Flight RB5 Drone",
+       "cat": "103456",
+       "apl": "909012",
+       "ano": 2017,
+       "resp": "97043096768820",
+       "loc_base": {
+          "cidade": "Curitiba",
+          "uf": "PR"
+        }
+    },
+    {
+       "renamaut": "UGVMINORCL737406",
+       "fab": "16683422231892",
+       "mod": "Oracle Mining Rover",
+       "cat": "270844",
+       "apl": "309345",
+       "ano": 2021,
+       "resp": "72365185061",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "SECSGPCYBE04781E",
+       "fab": "20676010433187",
+       "mod": "CyberGuardian",
+       "cat": "351594",
+       "apl": "776089",
+       "ano": 2022,
+       "resp": "44675715826",
+       "loc_base": {
+          "cidade": "João Pessoa",
+          "uf": "PB"
+        }
+    },
+    {
+       "renamaut": "EDUEDUROBO01A21D",
+       "fab": "37640048019274",
+       "mod": "ROBOTIS OP3",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2019,
+       "resp": "20976630605",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "UAVFLYCSCOB68981",
+       "fab": "79633375788544",
+       "mod": "Cisco SkyNet",
+       "cat": "160722",
+       "apl": "610578",
+       "ano": 2023,
+       "resp": "53243910935",
+       "loc_base": {
+          "cidade": "Campinas",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "CLNDOMSAMS296794",
+       "fab": "52011502428146",
+       "mod": "Samsung JetBot",
+       "cat": "541482",
+       "apl": "606789",
+       "ano": 2021,
+       "resp": "97208074666",
+       "loc_base": {
+          "cidade": "Fortaleza",
+          "uf": "CE"
+        }
+    },
+    {
+       "renamaut": "EDUEDUXERO37169D",
+       "fab": "72190305388171",
+       "mod": "Xerox EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2018,
+       "resp": "39239924012510",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "UUVMARBROB987148",
+       "fab": "60466631188172",
+       "mod": "Blue Robotics T200 Thruster",
+       "cat": "380966",
+       "apl": "209234",
+       "ano": 2024,
+       "resp": "10403605130",
+       "loc_base": {
+          "cidade": "Porto Alegre",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "UAVAGPINTC1F8321",
+       "fab": "33110636693248",
+       "mod": "Intel AgriDrone",
+       "cat": "160722",
+       "apl": "101234",
+       "ano": 2017,
+       "resp": "94858808807",
+       "loc_base": {
+          "cidade": "Uberlândia",
+          "uf": "MG"
+        }
+    },
+    {
+       "renamaut": "EDUPARSONY4D8085",
+       "fab": "23006226066899",
+       "mod": "Sony Aibo Performer",
+       "cat": "661626",
+       "apl": "643278",
+       "ano": 2023,
+       "resp": "85348966746",
+       "loc_base": {
+          "cidade": "Três Lagoas",
+          "uf": "MS"
+        }
+    },
+    {
+       "renamaut": "DRNFLYINTC505526",
+       "fab": "33110636693248",
+       "mod": "Intel Falcon 8+",
+       "cat": "103456",
+       "apl": "610578",
+       "ano": 2019,
+       "resp": "00062262645",
+       "loc_base": {
+          "cidade": "Recife",
+          "uf": "PE"
+        }
+    },
+    {
+       "renamaut": "DRNLOGAMZN935D74",
+       "fab": "87273419966709",
+       "mod": "Amazon Fulfillment Bot",
+       "cat": "103456",
+       "apl": "909012",
+       "ano": 2024,
+       "resp": "06772391730",
+       "loc_base": {
+          "cidade": "Recife",
+          "uf": "PE"
+        }
+    },
+    {
+       "renamaut": "DRNRCAQUAL143618",
+       "fab": "72656147707052",
+       "mod": "Qualcomm Drone Platform",
+       "cat": "103456",
+       "apl": "509567",
+       "ano": 2020,
+       "resp": "50303681322",
+       "loc_base": {
+          "cidade": "Porto Alegre",
+          "uf": "RS"
+        }
+    },
+    {
+       "renamaut": "EDUEDUXERO119761",
+       "fab": "72190305388171",
+       "mod": "Xerox EduBot",
+       "cat": "661626",
+       "apl": "808901",
+       "ano": 2022,
+       "resp": "81618890727468",
+       "loc_base": {
+          "cidade": "Rio de Janeiro",
+          "uf": "RJ"
+        }
+    },
+    {
+       "renamaut": "SWISUBWDIG231A20",
+       "fab": "49092001630031",
+       "mod": "WD SeaScout",
+       "cat": "342310",
+       "apl": "510467",
+       "ano": 2022,
+       "resp": "42891798007",
+       "loc_base": {
+          "cidade": "Rio Branco",
+          "uf": "AC"
+        }
+    },
+    {
+       "renamaut": "EDUPARSHARA39519",
+       "fab": "61290801904103",
+       "mod": "Sharp Aibo Performer",
+       "cat": "661626",
+       "apl": "643278",
+       "ano": 2018,
+       "resp": "81807997231408",
+       "loc_base": {
+          "cidade": "Fortaleza",
+          "uf": "CE"
+        }
+    },
+    {
+       "renamaut": "DRNRCANTAP234537",
+       "fab": "69003945242175",
+       "mod": "NetApp Recon Scout",
+       "cat": "103456",
+       "apl": "509567",
+       "ano": 2018,
+       "resp": "81724433798045",
+       "loc_base": {
+          "cidade": "Salvador",
+          "uf": "BA"
+        }
+    },
+    {
+       "renamaut": "UGVINSTOSH064F05",
+       "fab": "02869738021970",
+       "mod": "Toshiba InspectionBot",
+       "cat": "270844",
+       "apl": "404567",
+       "ano": 2022,
+       "resp": "71486551882",
+       "loc_base": {
+          "cidade": "Joinville",
+          "uf": "SC"
+        }
+    },
+    {
+       "renamaut": "UGVMINNECX42266A",
+       "fab": "72175121636560",
+       "mod": "NEC Mining Rover",
+       "cat": "270844",
+       "apl": "309345",
+       "ano": 2024,
+       "resp": "68237017103765",
+       "loc_base": {
+          "cidade": "Parauapebas",
+          "uf": "PA"
+        }
+    },
+    {
+       "renamaut": "SECPOLBOSTD13621",
+       "fab": "10431280011776",
+       "mod": "Boston Dynamics Spot",
+       "cat": "351594",
+       "apl": "110023",
+       "ano": 2020,
+       "resp": "74146926764770",
+       "loc_base": {
+          "cidade": "Curitiba",
+          "uf": "PR"
+        }
+    },
+    {
+       "renamaut": "MEDHOMSOFT571512",
+       "fab": "50752355582058",
+       "mod": "SoftBank Whiz",
+       "cat": "421257",
+       "apl": "310245",
+       "ano": 2023,
+       "resp": "83388152182816",
+       "loc_base": {
+          "cidade": "São Paulo",
+          "uf": "SP"
+        }
+    },
+    {
+       "renamaut": "CLNDOMASUS65E902",
+       "fab": "92359736837370",
+       "mod": "ASUS HomeBot",
+       "cat": "541482",
+       "apl": "606789",
+       "ano": 2022,
+       "resp": "75247690753",
+       "loc_base": {
+          "cidade": "Recife",
+          "uf": "PE"
+        }
+    },
+    {
+       "renamaut": "UAVFLYCSCOF81532",
+       "fab": "79633375788544",
+       "mod": "Cisco SkyNet",
+       "cat": "160722",
+       "apl": "610578",
+       "ano": 2024,
+       "resp": "08496290395",
+       "loc_base": {
+          "cidade": "Recife",
+          "uf": "PE"
+        }
+    }
+  ]
+}
