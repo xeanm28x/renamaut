@@ -1,0 +1,1200 @@
+Número de Registro: UAVFLYERIC79F514
+Fabricante: 66412Ericsson SkyNet
+Modelo: Ericsson SkyNet
+Categoria: 160761057�
+Aplicação: 61057�
+Ano de Fabricação: 2021
+Responsável: 98761388718
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: SWISUBSEAG74970C
+Fabricante: 74538Seagate SeaExplorer
+Modelo: Seagate SeaExplorer
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2023
+Responsável: 22484939833
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: SWISUBWDIG613521
+Fabricante: 49092WD SeaScout
+Modelo: WD SeaScout
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2020
+Responsável: 21602231907
+Status: Inativo
+Localização: Santos - SP
+----------------------------------
+Número de Registro: FARAGPJHDR422130
+Fabricante: 02805John Deere Autonomous Field Rover
+Modelo: John Deere Autonomous Field Rover
+Categoria: 281810123�
+Aplicação: 10123�
+Ano de Fabricação: 2022
+Responsável: 96622047766
+Status: Inativo
+Localização: Maringá - PR
+----------------------------------
+Número de Registro: UUVSEAWDIG618488
+Fabricante: 49092WD CoralMapper
+Modelo: WD CoralMapper
+Categoria: 380995441�
+Aplicação: 95441�
+Ano de Fabricação: 2020
+Responsável: 32344473904
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: VEILOGKUKA798D37
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2023
+Responsável: 27274902598
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: DRNFLYSONY891380
+Fabricante: 23006Sony SkyEye
+Modelo: Sony SkyEye
+Categoria: 103461057�
+Aplicação: 61057�
+Ano de Fabricação: 2023
+Responsável: 58014359640
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: UGVINSXERO419334
+Fabricante: 72190Xerox InspectionBot
+Modelo: Xerox InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2017
+Responsável: 69800363351
+Status: Inativo
+Localização: Anápolis - GO
+----------------------------------
+Número de Registro: EDUEDURHTX3924B7
+Fabricante: 14144Red Hat EduBot
+Modelo: Red Hat EduBot
+Categoria: 661680890�
+Aplicação: 80890�
+Ano de Fabricação: 2023
+Responsável: 02871241260
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: EXOASMCYBE965A66
+Fabricante: 20676HAL Medical
+Modelo: HAL Medical
+Categoria: 460250567�
+Aplicação: 50567�
+Ano de Fabricação: 2024
+Responsável: 01782746071420
+Status: Inativo
+Localização: Salvador - BA
+----------------------------------
+Número de Registro: UGVINSMOTO9D9600
+Fabricante: 84789Motorola InspectionBot
+Modelo: Motorola InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2022
+Responsável: 10638979803
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: CLNDOMHPXX17481B
+Fabricante: 75422HP HomeBot
+Modelo: HP HomeBot
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2022
+Responsável: 40947397850
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: EDUTOUAPPLE54874
+Fabricante: 04274Apple SiriBot
+Modelo: Apple SiriBot
+Categoria: 661662147�
+Aplicação: 62147�
+Ano de Fabricação: 2022
+Responsável: 97659395580
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: UGVINSTOSHD07183
+Fabricante: 02869Toshiba InspectionBot
+Modelo: Toshiba InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2021
+Responsável: 79362015960986
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: WALWARTREE496154
+Fabricante: 86747Unitree Aliengo
+Modelo: Unitree Aliengo
+Categoria: 222121013�
+Aplicação: 21013�
+Ano de Fabricação: 2024
+Responsável: 77848950376901
+Status: Inativo
+Localização: Brasília - DF
+----------------------------------
+Número de Registro: EDUPARUBTE623954
+Fabricante: 84754UBTECH Walker
+Modelo: UBTECH Walker
+Categoria: 661664327�
+Aplicação: 64327�
+Ano de Fabricação: 2022
+Responsável: 94727467305
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: DRNRCAALCA145529
+Fabricante: 17035Alcatel Recon Scout
+Modelo: Alcatel Recon Scout
+Categoria: 103450956�
+Aplicação: 50956�
+Ano de Fabricação: 2022
+Responsável: 18326611807484
+Status: Inativo
+Localização: Campinas - SP
+----------------------------------
+Número de Registro: CLNDOMSONY28D17E
+Fabricante: 23006Sony AiRo
+Modelo: Sony AiRo
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2020
+Responsável: 87213047426
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: VEILOGKUKA034699
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2024
+Responsável: 93976374081535
+Status: Inativo
+Localização: Recife - PE
+----------------------------------
+Número de Registro: EXOIDOEKSO011739
+Fabricante: 15836EksoGT
+Modelo: EksoGT
+Categoria: 460294351�
+Aplicação: 94351�
+Ano de Fabricação: 2020
+Responsável: 50564124881190
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: UAVFLYERIC79F514
+Fabricante: 66412Ericsson SkyNet
+Modelo: Ericsson SkyNet
+Categoria: 160761057�
+Aplicação: 61057�
+Ano de Fabricação: 2021
+Responsável: 98761388718
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: SWISUBSEAG74970C
+Fabricante: 74538Seagate SeaExplorer
+Modelo: Seagate SeaExplorer
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2023
+Responsável: 22484939833
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: SWISUBWDIG613521
+Fabricante: 49092WD SeaScout
+Modelo: WD SeaScout
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2020
+Responsável: 21602231907
+Status: Inativo
+Localização: Santos - SP
+----------------------------------
+Número de Registro: FARAGPJHDR422130
+Fabricante: 02805John Deere Autonomous Field Rover
+Modelo: John Deere Autonomous Field Rover
+Categoria: 281810123�
+Aplicação: 10123�
+Ano de Fabricação: 2022
+Responsável: 96622047766
+Status: Inativo
+Localização: Maringá - PR
+----------------------------------
+Número de Registro: UUVSEAWDIG618488
+Fabricante: 49092WD CoralMapper
+Modelo: WD CoralMapper
+Categoria: 380995441�
+Aplicação: 95441�
+Ano de Fabricação: 2020
+Responsável: 32344473904
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: VEILOGKUKA798D37
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2023
+Responsável: 27274902598
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: DRNFLYSONY891380
+Fabricante: 23006Sony SkyEye
+Modelo: Sony SkyEye
+Categoria: 103461057�
+Aplicação: 61057�
+Ano de Fabricação: 2023
+Responsável: 58014359640
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: UGVINSXERO419334
+Fabricante: 72190Xerox InspectionBot
+Modelo: Xerox InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2017
+Responsável: 69800363351
+Status: Inativo
+Localização: Anápolis - GO
+----------------------------------
+Número de Registro: EDUEDURHTX3924B7
+Fabricante: 14144Red Hat EduBot
+Modelo: Red Hat EduBot
+Categoria: 661680890�
+Aplicação: 80890�
+Ano de Fabricação: 2023
+Responsável: 02871241260
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: EXOASMCYBE965A66
+Fabricante: 20676HAL Medical
+Modelo: HAL Medical
+Categoria: 460250567�
+Aplicação: 50567�
+Ano de Fabricação: 2024
+Responsável: 01782746071420
+Status: Inativo
+Localização: Salvador - BA
+----------------------------------
+Número de Registro: UGVINSMOTO9D9600
+Fabricante: 84789Motorola InspectionBot
+Modelo: Motorola InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2022
+Responsável: 10638979803
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: CLNDOMHPXX17481B
+Fabricante: 75422HP HomeBot
+Modelo: HP HomeBot
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2022
+Responsável: 40947397850
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: EDUTOUAPPLE54874
+Fabricante: 04274Apple SiriBot
+Modelo: Apple SiriBot
+Categoria: 661662147�
+Aplicação: 62147�
+Ano de Fabricação: 2022
+Responsável: 97659395580
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: UGVINSTOSHD07183
+Fabricante: 02869Toshiba InspectionBot
+Modelo: Toshiba InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2021
+Responsável: 79362015960986
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: WALWARTREE496154
+Fabricante: 86747Unitree Aliengo
+Modelo: Unitree Aliengo
+Categoria: 222121013�
+Aplicação: 21013�
+Ano de Fabricação: 2024
+Responsável: 77848950376901
+Status: Inativo
+Localização: Brasília - DF
+----------------------------------
+Número de Registro: EDUPARUBTE623954
+Fabricante: 84754UBTECH Walker
+Modelo: UBTECH Walker
+Categoria: 661664327�
+Aplicação: 64327�
+Ano de Fabricação: 2022
+Responsável: 94727467305
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: DRNRCAALCA145529
+Fabricante: 17035Alcatel Recon Scout
+Modelo: Alcatel Recon Scout
+Categoria: 103450956�
+Aplicação: 50956�
+Ano de Fabricação: 2022
+Responsável: 18326611807484
+Status: Inativo
+Localização: Campinas - SP
+----------------------------------
+Número de Registro: CLNDOMSONY28D17E
+Fabricante: 23006Sony AiRo
+Modelo: Sony AiRo
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2020
+Responsável: 87213047426
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: VEILOGKUKA034699
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2024
+Responsável: 93976374081535
+Status: Inativo
+Localização: Recife - PE
+----------------------------------
+Número de Registro: EXOIDOEKSO011739
+Fabricante: 15836EksoGT
+Modelo: EksoGT
+Categoria: 460294351�
+Aplicação: 94351�
+Ano de Fabricação: 2020
+Responsável: 50564124881190
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: UAVFLYERIC79F514
+Fabricante: 66412Ericsson SkyNet
+Modelo: Ericsson SkyNet
+Categoria: 160761057�
+Aplicação: 61057�
+Ano de Fabricação: 2021
+Responsável: 98761388718
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: SWISUBSEAG74970C
+Fabricante: 74538Seagate SeaExplorer
+Modelo: Seagate SeaExplorer
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2023
+Responsável: 22484939833
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: SWISUBWDIG613521
+Fabricante: 49092WD SeaScout
+Modelo: WD SeaScout
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2020
+Responsável: 21602231907
+Status: Inativo
+Localização: Santos - SP
+----------------------------------
+Número de Registro: FARAGPJHDR422130
+Fabricante: 02805John Deere Autonomous Field Rover
+Modelo: John Deere Autonomous Field Rover
+Categoria: 281810123�
+Aplicação: 10123�
+Ano de Fabricação: 2022
+Responsável: 96622047766
+Status: Inativo
+Localização: Maringá - PR
+----------------------------------
+Número de Registro: UUVSEAWDIG618488
+Fabricante: 49092WD CoralMapper
+Modelo: WD CoralMapper
+Categoria: 380995441�
+Aplicação: 95441�
+Ano de Fabricação: 2020
+Responsável: 32344473904
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: VEILOGKUKA798D37
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2023
+Responsável: 27274902598
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: DRNFLYSONY891380
+Fabricante: 23006Sony SkyEye
+Modelo: Sony SkyEye
+Categoria: 103461057�
+Aplicação: 61057�
+Ano de Fabricação: 2023
+Responsável: 58014359640
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: UGVINSXERO419334
+Fabricante: 72190Xerox InspectionBot
+Modelo: Xerox InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2017
+Responsável: 69800363351
+Status: Inativo
+Localização: Anápolis - GO
+----------------------------------
+Número de Registro: EDUEDURHTX3924B7
+Fabricante: 14144Red Hat EduBot
+Modelo: Red Hat EduBot
+Categoria: 661680890�
+Aplicação: 80890�
+Ano de Fabricação: 2023
+Responsável: 02871241260
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: EXOASMCYBE965A66
+Fabricante: 20676HAL Medical
+Modelo: HAL Medical
+Categoria: 460250567�
+Aplicação: 50567�
+Ano de Fabricação: 2024
+Responsável: 01782746071420
+Status: Inativo
+Localização: Salvador - BA
+----------------------------------
+Número de Registro: UGVINSMOTO9D9600
+Fabricante: 84789Motorola InspectionBot
+Modelo: Motorola InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2022
+Responsável: 10638979803
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: CLNDOMHPXX17481B
+Fabricante: 75422HP HomeBot
+Modelo: HP HomeBot
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2022
+Responsável: 40947397850
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: EDUTOUAPPLE54874
+Fabricante: 04274Apple SiriBot
+Modelo: Apple SiriBot
+Categoria: 661662147�
+Aplicação: 62147�
+Ano de Fabricação: 2022
+Responsável: 97659395580
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: UGVINSTOSHD07183
+Fabricante: 02869Toshiba InspectionBot
+Modelo: Toshiba InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2021
+Responsável: 79362015960986
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: WALWARTREE496154
+Fabricante: 86747Unitree Aliengo
+Modelo: Unitree Aliengo
+Categoria: 222121013�
+Aplicação: 21013�
+Ano de Fabricação: 2024
+Responsável: 77848950376901
+Status: Inativo
+Localização: Brasília - DF
+----------------------------------
+Número de Registro: EDUPARUBTE623954
+Fabricante: 84754UBTECH Walker
+Modelo: UBTECH Walker
+Categoria: 661664327�
+Aplicação: 64327�
+Ano de Fabricação: 2022
+Responsável: 94727467305
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: DRNRCAALCA145529
+Fabricante: 17035Alcatel Recon Scout
+Modelo: Alcatel Recon Scout
+Categoria: 103450956�
+Aplicação: 50956�
+Ano de Fabricação: 2022
+Responsável: 18326611807484
+Status: Inativo
+Localização: Campinas - SP
+----------------------------------
+Número de Registro: CLNDOMSONY28D17E
+Fabricante: 23006Sony AiRo
+Modelo: Sony AiRo
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2020
+Responsável: 87213047426
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: VEILOGKUKA034699
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2024
+Responsável: 93976374081535
+Status: Inativo
+Localização: Recife - PE
+----------------------------------
+Número de Registro: EXOIDOEKSO011739
+Fabricante: 15836EksoGT
+Modelo: EksoGT
+Categoria: 460294351�
+Aplicação: 94351�
+Ano de Fabricação: 2020
+Responsável: 50564124881190
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: UAVFLYERIC79F514
+Fabricante: 66412Ericsson SkyNet
+Modelo: Ericsson SkyNet
+Categoria: 160761057�
+Aplicação: 61057�
+Ano de Fabricação: 2021
+Responsável: 98761388718
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: SWISUBSEAG74970C
+Fabricante: 74538Seagate SeaExplorer
+Modelo: Seagate SeaExplorer
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2023
+Responsável: 22484939833
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: SWISUBWDIG613521
+Fabricante: 49092WD SeaScout
+Modelo: WD SeaScout
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2020
+Responsável: 21602231907
+Status: Inativo
+Localização: Santos - SP
+----------------------------------
+Número de Registro: FARAGPJHDR422130
+Fabricante: 02805John Deere Autonomous Field Rover
+Modelo: John Deere Autonomous Field Rover
+Categoria: 281810123�
+Aplicação: 10123�
+Ano de Fabricação: 2022
+Responsável: 96622047766
+Status: Inativo
+Localização: Maringá - PR
+----------------------------------
+Número de Registro: UUVSEAWDIG618488
+Fabricante: 49092WD CoralMapper
+Modelo: WD CoralMapper
+Categoria: 380995441�
+Aplicação: 95441�
+Ano de Fabricação: 2020
+Responsável: 32344473904
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: VEILOGKUKA798D37
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2023
+Responsável: 27274902598
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: DRNFLYSONY891380
+Fabricante: 23006Sony SkyEye
+Modelo: Sony SkyEye
+Categoria: 103461057�
+Aplicação: 61057�
+Ano de Fabricação: 2023
+Responsável: 58014359640
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: UGVINSXERO419334
+Fabricante: 72190Xerox InspectionBot
+Modelo: Xerox InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2017
+Responsável: 69800363351
+Status: Inativo
+Localização: Anápolis - GO
+----------------------------------
+Número de Registro: EDUEDURHTX3924B7
+Fabricante: 14144Red Hat EduBot
+Modelo: Red Hat EduBot
+Categoria: 661680890�
+Aplicação: 80890�
+Ano de Fabricação: 2023
+Responsável: 02871241260
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: EXOASMCYBE965A66
+Fabricante: 20676HAL Medical
+Modelo: HAL Medical
+Categoria: 460250567�
+Aplicação: 50567�
+Ano de Fabricação: 2024
+Responsável: 01782746071420
+Status: Inativo
+Localização: Salvador - BA
+----------------------------------
+Número de Registro: UGVINSMOTO9D9600
+Fabricante: 84789Motorola InspectionBot
+Modelo: Motorola InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2022
+Responsável: 10638979803
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: CLNDOMHPXX17481B
+Fabricante: 75422HP HomeBot
+Modelo: HP HomeBot
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2022
+Responsável: 40947397850
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: EDUTOUAPPLE54874
+Fabricante: 04274Apple SiriBot
+Modelo: Apple SiriBot
+Categoria: 661662147�
+Aplicação: 62147�
+Ano de Fabricação: 2022
+Responsável: 97659395580
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: UGVINSTOSHD07183
+Fabricante: 02869Toshiba InspectionBot
+Modelo: Toshiba InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2021
+Responsável: 79362015960986
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: WALWARTREE496154
+Fabricante: 86747Unitree Aliengo
+Modelo: Unitree Aliengo
+Categoria: 222121013�
+Aplicação: 21013�
+Ano de Fabricação: 2024
+Responsável: 77848950376901
+Status: Inativo
+Localização: Brasília - DF
+----------------------------------
+Número de Registro: EDUPARUBTE623954
+Fabricante: 84754UBTECH Walker
+Modelo: UBTECH Walker
+Categoria: 661664327�
+Aplicação: 64327�
+Ano de Fabricação: 2022
+Responsável: 94727467305
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: DRNRCAALCA145529
+Fabricante: 17035Alcatel Recon Scout
+Modelo: Alcatel Recon Scout
+Categoria: 103450956�
+Aplicação: 50956�
+Ano de Fabricação: 2022
+Responsável: 18326611807484
+Status: Inativo
+Localização: Campinas - SP
+----------------------------------
+Número de Registro: CLNDOMSONY28D17E
+Fabricante: 23006Sony AiRo
+Modelo: Sony AiRo
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2020
+Responsável: 87213047426
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: VEILOGKUKA034699
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2024
+Responsável: 93976374081535
+Status: Inativo
+Localização: Recife - PE
+----------------------------------
+Número de Registro: EXOIDOEKSO011739
+Fabricante: 15836EksoGT
+Modelo: EksoGT
+Categoria: 460294351�
+Aplicação: 94351�
+Ano de Fabricação: 2020
+Responsável: 50564124881190
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: UAVFLYERIC79F514
+Fabricante: 66412Ericsson SkyNet
+Modelo: Ericsson SkyNet
+Categoria: 160761057�
+Aplicação: 61057�
+Ano de Fabricação: 2021
+Responsável: 98761388718
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: SWISUBSEAG74970C
+Fabricante: 74538Seagate SeaExplorer
+Modelo: Seagate SeaExplorer
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2023
+Responsável: 22484939833
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: SWISUBWDIG613521
+Fabricante: 49092WD SeaScout
+Modelo: WD SeaScout
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2020
+Responsável: 21602231907
+Status: Inativo
+Localização: Santos - SP
+----------------------------------
+Número de Registro: FARAGPJHDR422130
+Fabricante: 02805John Deere Autonomous Field Rover
+Modelo: John Deere Autonomous Field Rover
+Categoria: 281810123�
+Aplicação: 10123�
+Ano de Fabricação: 2022
+Responsável: 96622047766
+Status: Inativo
+Localização: Maringá - PR
+----------------------------------
+Número de Registro: UUVSEAWDIG618488
+Fabricante: 49092WD CoralMapper
+Modelo: WD CoralMapper
+Categoria: 380995441�
+Aplicação: 95441�
+Ano de Fabricação: 2020
+Responsável: 32344473904
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: VEILOGKUKA798D37
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2023
+Responsável: 27274902598
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: DRNFLYSONY891380
+Fabricante: 23006Sony SkyEye
+Modelo: Sony SkyEye
+Categoria: 103461057�
+Aplicação: 61057�
+Ano de Fabricação: 2023
+Responsável: 58014359640
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: UGVINSXERO419334
+Fabricante: 72190Xerox InspectionBot
+Modelo: Xerox InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2017
+Responsável: 69800363351
+Status: Inativo
+Localização: Anápolis - GO
+----------------------------------
+Número de Registro: EDUEDURHTX3924B7
+Fabricante: 14144Red Hat EduBot
+Modelo: Red Hat EduBot
+Categoria: 661680890�
+Aplicação: 80890�
+Ano de Fabricação: 2023
+Responsável: 02871241260
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: EXOASMCYBE965A66
+Fabricante: 20676HAL Medical
+Modelo: HAL Medical
+Categoria: 460250567�
+Aplicação: 50567�
+Ano de Fabricação: 2024
+Responsável: 01782746071420
+Status: Inativo
+Localização: Salvador - BA
+----------------------------------
+Número de Registro: UGVINSMOTO9D9600
+Fabricante: 84789Motorola InspectionBot
+Modelo: Motorola InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2022
+Responsável: 10638979803
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: CLNDOMHPXX17481B
+Fabricante: 75422HP HomeBot
+Modelo: HP HomeBot
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2022
+Responsável: 40947397850
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: EDUTOUAPPLE54874
+Fabricante: 04274Apple SiriBot
+Modelo: Apple SiriBot
+Categoria: 661662147�
+Aplicação: 62147�
+Ano de Fabricação: 2022
+Responsável: 97659395580
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: UGVINSTOSHD07183
+Fabricante: 02869Toshiba InspectionBot
+Modelo: Toshiba InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2021
+Responsável: 79362015960986
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: WALWARTREE496154
+Fabricante: 86747Unitree Aliengo
+Modelo: Unitree Aliengo
+Categoria: 222121013�
+Aplicação: 21013�
+Ano de Fabricação: 2024
+Responsável: 77848950376901
+Status: Inativo
+Localização: Brasília - DF
+----------------------------------
+Número de Registro: EDUPARUBTE623954
+Fabricante: 84754UBTECH Walker
+Modelo: UBTECH Walker
+Categoria: 661664327�
+Aplicação: 64327�
+Ano de Fabricação: 2022
+Responsável: 94727467305
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: DRNRCAALCA145529
+Fabricante: 17035Alcatel Recon Scout
+Modelo: Alcatel Recon Scout
+Categoria: 103450956�
+Aplicação: 50956�
+Ano de Fabricação: 2022
+Responsável: 18326611807484
+Status: Inativo
+Localização: Campinas - SP
+----------------------------------
+Número de Registro: CLNDOMSONY28D17E
+Fabricante: 23006Sony AiRo
+Modelo: Sony AiRo
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2020
+Responsável: 87213047426
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: VEILOGKUKA034699
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2024
+Responsável: 93976374081535
+Status: Inativo
+Localização: Recife - PE
+----------------------------------
+Número de Registro: EXOIDOEKSO011739
+Fabricante: 15836EksoGT
+Modelo: EksoGT
+Categoria: 460294351�
+Aplicação: 94351�
+Ano de Fabricação: 2020
+Responsável: 50564124881190
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: UAVFLYERIC79F514
+Fabricante: 66412Ericsson SkyNet
+Modelo: Ericsson SkyNet
+Categoria: 160761057�
+Aplicação: 61057�
+Ano de Fabricação: 2021
+Responsável: 98761388718
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: SWISUBSEAG74970C
+Fabricante: 74538Seagate SeaExplorer
+Modelo: Seagate SeaExplorer
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2023
+Responsável: 22484939833
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: SWISUBWDIG613521
+Fabricante: 49092WD SeaScout
+Modelo: WD SeaScout
+Categoria: 342351046�
+Aplicação: 51046�
+Ano de Fabricação: 2020
+Responsável: 21602231907
+Status: Inativo
+Localização: Santos - SP
+----------------------------------
+Número de Registro: FARAGPJHDR422130
+Fabricante: 02805John Deere Autonomous Field Rover
+Modelo: John Deere Autonomous Field Rover
+Categoria: 281810123�
+Aplicação: 10123�
+Ano de Fabricação: 2022
+Responsável: 96622047766
+Status: Inativo
+Localização: Maringá - PR
+----------------------------------
+Número de Registro: UUVSEAWDIG618488
+Fabricante: 49092WD CoralMapper
+Modelo: WD CoralMapper
+Categoria: 380995441�
+Aplicação: 95441�
+Ano de Fabricação: 2020
+Responsável: 32344473904
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: VEILOGKUKA798D37
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2023
+Responsável: 27274902598
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: DRNFLYSONY891380
+Fabricante: 23006Sony SkyEye
+Modelo: Sony SkyEye
+Categoria: 103461057�
+Aplicação: 61057�
+Ano de Fabricação: 2023
+Responsável: 58014359640
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: UGVINSXERO419334
+Fabricante: 72190Xerox InspectionBot
+Modelo: Xerox InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2017
+Responsável: 69800363351
+Status: Inativo
+Localização: Anápolis - GO
+----------------------------------
+Número de Registro: EDUEDURHTX3924B7
+Fabricante: 14144Red Hat EduBot
+Modelo: Red Hat EduBot
+Categoria: 661680890�
+Aplicação: 80890�
+Ano de Fabricação: 2023
+Responsável: 02871241260
+Status: Inativo
+Localização: Manaus - AM
+----------------------------------
+Número de Registro: EXOASMCYBE965A66
+Fabricante: 20676HAL Medical
+Modelo: HAL Medical
+Categoria: 460250567�
+Aplicação: 50567�
+Ano de Fabricação: 2024
+Responsável: 01782746071420
+Status: Inativo
+Localização: Salvador - BA
+----------------------------------
+Número de Registro: UGVINSMOTO9D9600
+Fabricante: 84789Motorola InspectionBot
+Modelo: Motorola InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2022
+Responsável: 10638979803
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: CLNDOMHPXX17481B
+Fabricante: 75422HP HomeBot
+Modelo: HP HomeBot
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2022
+Responsável: 40947397850
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: EDUTOUAPPLE54874
+Fabricante: 04274Apple SiriBot
+Modelo: Apple SiriBot
+Categoria: 661662147�
+Aplicação: 62147�
+Ano de Fabricação: 2022
+Responsável: 97659395580
+Status: Inativo
+Localização: Três Lagoas - MS
+----------------------------------
+Número de Registro: UGVINSTOSHD07183
+Fabricante: 02869Toshiba InspectionBot
+Modelo: Toshiba InspectionBot
+Categoria: 270840456�
+Aplicação: 40456�
+Ano de Fabricação: 2021
+Responsável: 79362015960986
+Status: Inativo
+Localização: Rio de Janeiro - RJ
+----------------------------------
+Número de Registro: WALWARTREE496154
+Fabricante: 86747Unitree Aliengo
+Modelo: Unitree Aliengo
+Categoria: 222121013�
+Aplicação: 21013�
+Ano de Fabricação: 2024
+Responsável: 77848950376901
+Status: Inativo
+Localização: Brasília - DF
+----------------------------------
+Número de Registro: EDUPARUBTE623954
+Fabricante: 84754UBTECH Walker
+Modelo: UBTECH Walker
+Categoria: 661664327�
+Aplicação: 64327�
+Ano de Fabricação: 2022
+Responsável: 94727467305
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------
+Número de Registro: DRNRCAALCA145529
+Fabricante: 17035Alcatel Recon Scout
+Modelo: Alcatel Recon Scout
+Categoria: 103450956�
+Aplicação: 50956�
+Ano de Fabricação: 2022
+Responsável: 18326611807484
+Status: Inativo
+Localização: Campinas - SP
+----------------------------------
+Número de Registro: CLNDOMSONY28D17E
+Fabricante: 23006Sony AiRo
+Modelo: Sony AiRo
+Categoria: 541460678�
+Aplicação: 60678�
+Ano de Fabricação: 2020
+Responsável: 87213047426
+Status: Inativo
+Localização: Porto Alegre - RS
+----------------------------------
+Número de Registro: VEILOGKUKA034699
+Fabricante: 57202KUKA omniMove
+Modelo: KUKA omniMove
+Categoria: 250190901�
+Aplicação: 90901�
+Ano de Fabricação: 2024
+Responsável: 93976374081535
+Status: Inativo
+Localização: Recife - PE
+----------------------------------
+Número de Registro: EXOIDOEKSO011739
+Fabricante: 15836EksoGT
+Modelo: EksoGT
+Categoria: 460294351�
+Aplicação: 94351�
+Ano de Fabricação: 2020
+Responsável: 50564124881190
+Status: Inativo
+Localização: Belo Horizonte - MG
+----------------------------------

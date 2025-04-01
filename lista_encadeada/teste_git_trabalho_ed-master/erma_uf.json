@@ -1,0 +1,17 @@
+{
+    "dados": [
+        {
+            "renamaut": "123456789",
+            "fab": "XYZ",
+            "mod": "Modelo A",
+            "cat": "001",
+            "apl": "002",
+            "ano": 2020,
+            "resp": "76655288905",
+            "loc_base": {
+                "cidade": "São Paulo",
+                "uf": "SP"
+            }
+        }
+    ]
+}
