@@ -1,42 +1,57 @@
 #include "../gov_dev/gov_dev.h"
 #include "file_handler.h"
+#include "operacoes_lista_encadeada.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(void)
 {
-    const char *filename = "../base_dados/exemplo_20.ERMAUF";
+    const char *filename = "../base_dados/exemplo_100.ERMAUF";
+    char numero_registro[19];
+    MaquinaAutonoma *lista = NULL;
+    MaquinaAutonoma *aux = NULL;
 
     import(filename);
 
-    int op = main_menu();
+    int op;
 
-    switch (op)
-    {
-    case SEARCH_OPTION:
-        printf("Consulta por número de registro\n");
-        break;
+    do {
+        op = main_menu();
+        switch (op){
+            case SEARCH_OPTION:
+                printf("Número de registro: ");
 
-    case CHANGE_STATUS_OPTION:
-        printf("Inativação por número de registro\n");
-        break;
+                scanf("%[^\n]s", numero_registro);
 
-    case RESPONSABILITY_REPORT_OPTION:
-        printf("Relatório de responsabilidade\n");
-        break;
+                getchar();
 
-    case CATEGORY_REPORT_OPTION:
-        printf("Relatório por categoria\n");
-        break;
+                aux = buscar(numero_registro, lista);
 
-    case EXIT_SYSTEM:
-        return 0;
-        break;
+                if(aux == NULL) wait_enter("Máquina Autônoma não encontrada.");
+                else imprimir(aux);
 
-    default:
-        printf("Opção inválida! Por favor, tente novamente.\n");
-        break;
-    }
+                break;
+
+            case CHANGE_STATUS_OPTION:
+                wait_enter("Inativação por número de registro\n");
+                break;
+
+            case RESPONSABILITY_REPORT_OPTION:
+                wait_enter("Relatório de responsabilidade\n");
+                break;
+
+            case CATEGORY_REPORT_OPTION:
+                wait_enter("Relatório por categoria\n");
+                break;
+
+            case EXIT_SYSTEM:
+                break;
+
+            default:
+                wait_enter("Opção inválida! Por favor, tente novamente.\n");
+                break;
+        }
+    }while(op != EXIT_SYSTEM);
 
     return 0;
 }

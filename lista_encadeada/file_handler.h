@@ -3,8 +3,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "operacoes_lista_encadeada.h"
 
 #define MAX_FILE_SIZE 2048000
+
+MaquinaAutonoma *converter(const char *buffer) {
+    wait_enter(buffer);
+}
 
 void import(const char *filename)
 {
@@ -30,13 +35,11 @@ void import(const char *filename)
 
     int bytesRead = fread(buffer, 1, MAX_FILE_SIZE - 1, file);
 
-    printf("bytesRead: %d \n", bytesRead);
+    buffer[bytesRead] = '\0';
 
-    // buffer[bytesRead] = '\0';
+    converter(buffer);
 
     fclose(file);
-
-    // printf("Conteúdo do arquivo:\n%s\n", buffer);
 
     free(buffer);
 }
