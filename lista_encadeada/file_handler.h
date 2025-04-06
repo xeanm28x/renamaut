@@ -4,11 +4,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "operacoes_lista_encadeada.h"
+#include <cjson/cJSON.h>
 
 #define MAX_FILE_SIZE 2048000
 
 MaquinaAutonoma *converter(const char *buffer) {
-    wait_enter(buffer);
+    cJSON *base_dados = cJSON_Parse(buffer);
+    char mensagem_erro[50] = "Ocorreu um erro na importação dos dados.";
+    MaquinaAutonoma *lista;
+
+    if(base_dados != NULL) {
+
+        cJSON *array_dados = cJSON_GetObjectItem(base_dados, "dados");
+
+        if(array_dados != NULL) {
+            int tamanho = cJSON_GetArraySize(array_dados);
+
+            
+            for (int i = 0; i < tamanho; i++) {}
+            
+            free(array_dados);
+        } else {
+            wait_enter(mensagem_erro);
+        }
+
+    } else {
+        wait_enter(mensagem_erro);
+    }
+    free(base_dados);
 }
 
 void import(const char *filename)
@@ -45,3 +68,12 @@ void import(const char *filename)
 }
 
 #endif
+
+// char *json_string = cJSON_Print(array_dados);
+
+//             if (json_string != NULL) {
+//                 wait_enter(json_string);
+//                 free(json_string);
+//             } else {
+//                 wait_enter(mensagem_erro);
+//             }
