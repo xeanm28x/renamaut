@@ -4,26 +4,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void limpar_buffer()
+{
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {}
+}
+
+
 int main(void)
 {
     const char *filename = "../base_dados/exemplo_100.ERMAUF";
     char numero_registro[19];
-    MaquinaAutonoma *lista = NULL;
+    MaquinaAutonoma *lista = importar(filename);
     MaquinaAutonoma *aux = NULL;
-
-    import(filename);
 
     int op;
 
-    do {
+    do
+    {
         op = main_menu();
-        switch (op){
+
+        switch (op)
+        {
             case SEARCH_OPTION:
                 printf("Número de registro: ");
 
-                scanf("%[^\n]s", numero_registro);
+                limpar_buffer();
 
-                getchar();
+                fgets(numero_registro, sizeof(numero_registro), stdin);
+
+                numero_registro[strcspn(numero_registro, "\n")] = '\0';
 
                 aux = buscar(numero_registro, lista);
 
@@ -45,13 +55,15 @@ int main(void)
                 break;
 
             case EXIT_SYSTEM:
+                aux = NULL;
+                liberar_lista(&lista);
                 break;
 
             default:
                 wait_enter("Opção inválida! Por favor, tente novamente.\n");
                 break;
         }
-    }while(op != EXIT_SYSTEM);
+    } while(op != EXIT_SYSTEM);
 
     return 0;
 }
