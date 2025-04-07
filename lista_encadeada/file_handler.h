@@ -6,37 +6,28 @@
 #include "operacoes_lista_encadeada.h"
 #include <cjson/cJSON.h>
 
-MaquinaAutonoma *converter(const char *buffer)
-{
+void converter(const char *buffer, MaquinaAutonoma **lista) {
     cJSON *base_dados = cJSON_Parse(buffer);
 
-    if(base_dados == NULL)
-    {
+    if(base_dados == NULL) {
         wait_enter("Ocorreu um erro na conversão JSON.");
-
-        return NULL;
+        return;
     }
 
     cJSON *array_dados = cJSON_GetObjectItem(base_dados, "dados");
 
-    if(array_dados == NULL)
-    {
+    if(array_dados == NULL) {
         cJSON_Delete(base_dados);
-
         wait_enter("Ocorreu um erro ao resgatar os dados após a conversão.");
-
-        return NULL;
+        return;
     }
 
     int tamanho = cJSON_GetArraySize(array_dados);
-
-    MaquinaAutonoma *lista = NULL;
     
-    for (int i = 0; i < tamanho; i++)
-    {
+    for (int i = 0; i < tamanho; i++) {
         cJSON *item = cJSON_GetArrayItem(array_dados, i);
-        const char *numero_registro = cJSON_GetObjectItem(item, "renamaut")->valuestring;
-        MaquinaAutonoma *aux = buscar(numero_registro, lista);
+        char *numero_registro = cJSON_GetObjectItem(item, "renamaut")->valuestring;
+        MaquinaAutonoma *aux = buscar(numero_registro, *lista);
 
         if(aux != NULL) continue;
 
@@ -58,23 +49,18 @@ MaquinaAutonoma *converter(const char *buffer)
         novo->localizacao->uf = strdup(cJSON_GetObjectItem(loc_base, "uf")->valuestring);
         novo->proxima = NULL;
 
-        inserir(&lista, novo);
+        inserir(lista, novo);
     }
 
     cJSON_Delete(base_dados);
-
-    return lista;
 }
 
-MaquinaAutonoma *importar(const char *filename)
-{
+void importar(const char *filename, MaquinaAutonoma **lista) {
     FILE *file = fopen(filename, "r");
 
-    if (!file)
-    {
-        printf("Erro ao abrir o arquivo.\n");
-
-        return NULL;
+    if (!file) {
+        printf("\nErro ao abrir o arquivo.");
+        return;
     }
 
     fseek(file, 0, SEEK_END);
@@ -85,37 +71,78 @@ MaquinaAutonoma *importar(const char *filename)
 
     char *buffer = (char *)malloc(file_size + 1);
 
-    if (!buffer)
-    {
+    if (!buffer) {
         fclose(file);
-
-        printf("Erro ao alocar memória para o arquivo.\n");
-
-        return NULL;
+        printf("\nErro ao alocar memória para o arquivo.");
+        return;
     }
 
     size_t bytesRead = fread(buffer, 1, file_size, file);
 
-    if (bytesRead != file_size)
-    {
-        printf("Erro na leitura do arquivo.\n");
-
+    if (bytesRead != file_size) {
+        printf("\nErro na leitura do arquivo.");
         free(buffer);
-
         fclose(file);
-
-        return NULL;
+        return;
     }
 
     buffer[bytesRead] = '\0';
 
-    MaquinaAutonoma *lista = converter(buffer);
+    converter(buffer, lista);
 
     free(buffer);
 
     fclose(file);
+}
+
+MaquinaAutonoma* ler(const char *filename) {
+    FILE *file = fopen(filename, "rb");
+
+    if (!file) {
+        return NULL;
+    }
+
+    MaquinaAutonoma *lista = NULL;
+    MaquinaAutonoma *novo = NULL;
+
+    while (1) {
+        novo = malloc(sizeof(MaquinaAutonoma));
+
+        if (!novo) {
+            printf("\nErro de alocação de memória.");
+            break;
+        }
+
+        if (fread(novo, sizeof(MaquinaAutonoma), 1, file) != 1) {
+            free(novo);
+            break;
+        }
+
+        novo->proxima = lista;
+        lista = novo;
+    }
+
+    fclose(file);
 
     return lista;
+}
+
+void gravar(const char *filename, MaquinaAutonoma *lista) {
+    FILE *file = fopen(filename, "wb");
+
+    if (!file) {
+        printf("\nErro ao abrir o arquivo.");
+        return;
+    }
+
+    MaquinaAutonoma *aux = lista;
+
+    while (aux != NULL) {
+        fwrite(aux, sizeof(MaquinaAutonoma), 1, file);
+        aux = aux->proxima;
+    }
+
+    fclose(file);
 }
 
 #endif

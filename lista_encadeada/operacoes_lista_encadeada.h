@@ -6,14 +6,12 @@
 #include <string.h>
 #include "../gov_dev/gov_dev.h"
 
-typedef struct
-{
+typedef struct {
     char *cidade;
     char *uf;
 } Localizacao;
 
-typedef struct MaquinaAutonoma
-{
+typedef struct MaquinaAutonoma {
     char *numero_registro;
     char *fabricante;
     char *modelo;
@@ -26,12 +24,10 @@ typedef struct MaquinaAutonoma
     struct MaquinaAutonoma *proxima;
 } MaquinaAutonoma;
 
-MaquinaAutonoma *buscar(const char *numero_registro, MaquinaAutonoma *lista)
-{
+MaquinaAutonoma *buscar(char *numero_registro, MaquinaAutonoma *lista) {
     MaquinaAutonoma *p = lista;
 
-    while(p != NULL)
-    {
+    while(p != NULL) {
         if(strcmp(p->numero_registro, numero_registro) == 0) return p;
         p = p->proxima;
     }
@@ -39,13 +35,11 @@ MaquinaAutonoma *buscar(const char *numero_registro, MaquinaAutonoma *lista)
     return NULL;
 }
 
-void inserir(MaquinaAutonoma **lista, MaquinaAutonoma *novo)
-{
+void inserir(MaquinaAutonoma **lista, MaquinaAutonoma *novo) {
     novo->proxima = NULL;
 
     if(*lista == NULL) *lista = novo;
-    else
-    {
+    else {
         MaquinaAutonoma *aux = *lista;
 
         while(aux->proxima != NULL) aux = aux->proxima;
@@ -54,12 +48,10 @@ void inserir(MaquinaAutonoma **lista, MaquinaAutonoma *novo)
     }
 }
 
-void remover(MaquinaAutonoma **lista, MaquinaAutonoma *p)
-{
+void remover(MaquinaAutonoma **lista, MaquinaAutonoma *p) {
     if(*lista == NULL || p == NULL) return;
 
-    if(*lista == p)
-    {
+    if(*lista == p) {
         *lista = p->proxima;
 
         free(p->numero_registro);
@@ -94,9 +86,28 @@ void remover(MaquinaAutonoma **lista, MaquinaAutonoma *p)
     free(p);
 }
 
-void imprimir(MaquinaAutonoma *celula)
-{
+void inativar(MaquinaAutonoma **lista, MaquinaAutonoma *p) {
+    if(*lista != NULL) {
+        MaquinaAutonoma *aux = *lista;
+        
+        while(aux != p) aux = aux->proxima;
+
+        aux->status = 0;
+    }
+}
+
+void imprimir(MaquinaAutonoma *celula) {
     char mensagem[512];
+
+    const char *fabricante = celula->fabricante;
+    const char *categoria = celula->categoria;
+    const char *aplicacao = celula->aplicacao;
+    const char *uf = celula->localizacao->uf;
+
+    const char *nome_fabricante = get_manufacturer_name_by_id(fabricante);
+    const char *desc_categoria = get_category_name_by_code(categoria);
+    const char *desc_aplicacao = get_application_description_by_code(aplicacao);
+    const char *desc_uf = get_state_name_by_abbr(uf);
 
     sprintf(
         mensagem,
@@ -111,26 +122,24 @@ void imprimir(MaquinaAutonoma *celula)
         "Cidade: %s\n"
         "Estado: %s\n",
         celula->numero_registro,
-        celula->fabricante,
+        nome_fabricante,
         celula->modelo,
-        celula->categoria,
-        celula->aplicacao,
+        desc_categoria,
+        desc_aplicacao,
         celula->ano_fabricacao,
         celula->responsavel,
         celula->status,
         celula->localizacao->cidade,
-        celula->localizacao->uf);
+        desc_uf);
 
     wait_enter(mensagem);
 }
 
-void liberar_lista(MaquinaAutonoma **lista)
-{
+void liberar_lista(MaquinaAutonoma **lista) {
     MaquinaAutonoma *aux = *lista;
     MaquinaAutonoma *atual;
 
-    while(aux != NULL)
-    {
+    while(aux != NULL) {
         atual = aux;
         aux = aux->proxima;
         remover(lista, atual);

@@ -4,63 +4,79 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void limpar_buffer()
-{
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF) {}
-}
-
-
-int main(void)
-{
+int main(void) {
     const char *filename = "../base_dados/exemplo_100.ERMAUF";
     char numero_registro[19];
-    MaquinaAutonoma *lista = importar(filename);
+    MaquinaAutonoma *lista = ler("base_dados.bin");
+    importar(filename, &lista);
     MaquinaAutonoma *aux = NULL;
 
     int op;
 
-    do
-    {
+    do {
         op = main_menu();
 
-        switch (op)
-        {
+        switch (op) {
             case SEARCH_OPTION:
-                printf("Número de registro: ");
+                printf("\nNúmero de registro: ");
 
-                limpar_buffer();
-
-                fgets(numero_registro, sizeof(numero_registro), stdin);
-
-                numero_registro[strcspn(numero_registro, "\n")] = '\0';
-
-                aux = buscar(numero_registro, lista);
-
-                if(aux == NULL) wait_enter("Máquina Autônoma não encontrada.");
-                else imprimir(aux);
-
+                if (fgets(numero_registro, sizeof(numero_registro), stdin) != NULL) {
+                    numero_registro[strcspn(numero_registro, "\n")] = '\0';
+            
+                    aux = buscar(numero_registro, lista);
+            
+                    if(aux == NULL) wait_enter("\nMáquina Autônoma não encontrada.\n");
+                    else {
+                        wait_enter("\nMáquina encontrada!\n");
+                        imprimir(aux);
+                        wait_enter("\nPressione ENTER para continuar...");
+                    }
+                } else wait_enter("\nErro na leitura do número de registro. Entre em contato com o suporte.\n");
                 break;
 
             case CHANGE_STATUS_OPTION:
-                wait_enter("Inativação por número de registro\n");
+                printf("\nNúmero de registro: ");
+
+                if (fgets(numero_registro, sizeof(numero_registro), stdin) != NULL) {
+                    numero_registro[strcspn(numero_registro, "\n")] = '\0';
+
+                    aux = buscar(numero_registro, lista);
+
+                    if(aux == NULL) wait_enter("\nMáquina Autônoma não encontrada.\n");
+                    else {
+                        imprimir(aux);
+
+                        char mensagem[512];
+
+                        sprintf(mensagem, "\nTem certeza que deseja inativar esta máquina? [S\\N] ");
+
+                        int confirmacao = wait_confirmation(mensagem);
+
+                        if(confirmacao == 1) {
+                            inativar(&lista, aux);
+                            wait_enter("\n\nMáquina inativada com sucesso!\n\nPressione ENTER para continuar...");
+                        }
+                        
+                        if(confirmacao == 0) wait_enter("\n\nCancelando...\n");
+                    }
+                }
+
                 break;
 
             case RESPONSABILITY_REPORT_OPTION:
-                wait_enter("Relatório de responsabilidade\n");
                 break;
 
             case CATEGORY_REPORT_OPTION:
-                wait_enter("Relatório por categoria\n");
                 break;
 
             case EXIT_SYSTEM:
                 aux = NULL;
+                gravar("base_dados.bin", lista);
                 liberar_lista(&lista);
                 break;
 
             default:
-                wait_enter("Opção inválida! Por favor, tente novamente.\n");
+                wait_enter("Opção inválida! Por favor, tente novamente.");
                 break;
         }
     } while(op != EXIT_SYSTEM);
