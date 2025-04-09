@@ -24,11 +24,22 @@ typedef struct MaquinaAutonoma {
     struct MaquinaAutonoma *proxima;
 } MaquinaAutonoma;
 
-MaquinaAutonoma *buscar(char *numero_registro, MaquinaAutonoma *lista) {
+MaquinaAutonoma *buscar_numero_registro(char *numero_registro, MaquinaAutonoma *lista) {
     MaquinaAutonoma *p = lista;
 
     while(p != NULL) {
         if(strcmp(p->numero_registro, numero_registro) == 0) return p;
+        p = p->proxima;
+    }
+
+    return NULL;
+}
+
+MaquinaAutonoma *buscar_responsavel(char *responsavel, MaquinaAutonoma *lista) {
+    MaquinaAutonoma *p = lista;
+
+    while(p != NULL) {
+        if(strcmp(p->responsavel, responsavel) == 0) return p;
         p = p->proxima;
     }
 
@@ -70,7 +81,9 @@ void remover(MaquinaAutonoma **lista, MaquinaAutonoma *p) {
 
     MaquinaAutonoma *aux = *lista;
 
-    while(aux->proxima != p) aux = aux->proxima;
+    while(aux != NULL && aux->proxima != p) aux = aux->proxima;
+
+    if (aux == NULL) return;
 
     aux->proxima = p->proxima;
 
@@ -118,7 +131,7 @@ void imprimir(MaquinaAutonoma *celula) {
         "Aplicacao: %s\n"
         "Ano de Fabricação: %d\n"
         "Responsável: %s\n"
-        "Status: %d\n"
+        "Status: %s\n"
         "Cidade: %s\n"
         "Estado: %s\n",
         celula->numero_registro,
@@ -128,7 +141,34 @@ void imprimir(MaquinaAutonoma *celula) {
         desc_aplicacao,
         celula->ano_fabricacao,
         celula->responsavel,
-        celula->status,
+        celula->status == 0 ? "Inativa" : "Ativa",
+        celula->localizacao->cidade,
+        desc_uf);
+
+    wait_enter(mensagem);
+}
+
+void imprimir_linha_relatorio(MaquinaAutonoma *celula) {
+    char mensagem[512];
+
+    const char *fabricante = celula->fabricante;
+    const char *categoria = celula->categoria;
+    const char *aplicacao = celula->aplicacao;
+    const char *uf = celula->localizacao->uf;
+
+    const char *nome_fabricante = get_manufacturer_name_by_id(fabricante);
+    const char *desc_categoria = get_category_name_by_code(categoria);
+    const char *desc_aplicacao = get_application_description_by_code(aplicacao);
+    const char *desc_uf = get_state_name_by_abbr(uf);
+
+    sprintf(
+        mensagem,
+        "%s; %s; %s; %d; %s; %s - %s\n",
+        celula->numero_registro,
+        celula->responsavel,
+        celula->modelo,
+        celula->ano_fabricacao,
+        celula->status == 0 ? "Inativa" : "Ativa",
         celula->localizacao->cidade,
         desc_uf);
 

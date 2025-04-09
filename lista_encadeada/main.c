@@ -5,10 +5,11 @@
 #include <stdlib.h>
 
 int main(void) {
-    const char *filename = "../base_dados/exemplo_100.ERMAUF";
+    const char *arquivo_ermauf = "../base_dados/exemplo_100.ERMAUF";
+    const char *base_dados = "base_dados.txt";
     char numero_registro[19];
-    MaquinaAutonoma *lista = ler("base_dados.bin");
-    importar(filename, &lista);
+    MaquinaAutonoma *lista = ler(base_dados);
+    importar(arquivo_ermauf, &lista);
     MaquinaAutonoma *aux = NULL;
 
     int op;
@@ -23,7 +24,7 @@ int main(void) {
                 if (fgets(numero_registro, sizeof(numero_registro), stdin) != NULL) {
                     numero_registro[strcspn(numero_registro, "\n")] = '\0';
             
-                    aux = buscar(numero_registro, lista);
+                    aux = buscar_numero_registro(numero_registro, lista);
             
                     if(aux == NULL) wait_enter("\nMáquina Autônoma não encontrada.\n");
                     else {
@@ -40,15 +41,20 @@ int main(void) {
                 if (fgets(numero_registro, sizeof(numero_registro), stdin) != NULL) {
                     numero_registro[strcspn(numero_registro, "\n")] = '\0';
 
-                    aux = buscar(numero_registro, lista);
+                    aux = buscar_numero_registro(numero_registro, lista);
 
                     if(aux == NULL) wait_enter("\nMáquina Autônoma não encontrada.\n");
                     else {
+                        if(aux->status == 0){
+                            wait_enter("\nMáquina Autônoma já está inativa.\n");
+                            break;
+                        }
+
                         imprimir(aux);
 
                         char mensagem[512];
 
-                        sprintf(mensagem, "\nTem certeza que deseja inativar esta máquina? [S\\N] ");
+                        sprintf(mensagem, "\nTem certeza que deseja inativar esta máquina? Essa operação é irreversível. [S\\N] ");
 
                         int confirmacao = wait_confirmation(mensagem);
 
@@ -64,6 +70,61 @@ int main(void) {
                 break;
 
             case RESPONSABILITY_REPORT_OPTION:
+                char responsavel[15];
+                MaquinaAutonoma *ativas = NULL;
+                MaquinaAutonoma *inativas = NULL;
+
+                printf("\nCPF ou CNPJ: ");
+
+                //tirar mascara sempre.
+
+                if(fgets(responsavel, sizeof(responsavel), stdin) != NULL) {
+                    responsavel[strcspn(responsavel, "\n")] = '\0';
+                    const char *cpf_cnpj = responsavel;
+                    int eh_valido = validate_cpf(cpf_cnpj) == 1 || validate_cnpj(cpf_cnpj) == 1;
+
+                    if(eh_valido == 0) {
+                        wait_enter("\nCPF ou CNPJ inválido.\n");
+                        break;
+                    }
+
+                    aux = buscar_responsavel(cpf_cnpj, lista);
+
+                    if(aux == NULL)  {
+                        wait_enter("\nNão há nenhuma Máquina Autônoma pertencente a este responsável.\n");
+                        break;
+                    } else if (aux->status == 0){
+                        inserir(aux, &inativas);
+                    } else {
+                        aux->proxima = NULL;
+                        inserir(aux, &ativas);
+                    }
+
+                    free(aux);
+
+                    if(inativas == NULL) {
+                        wait_enter("\nNenhum dado registrado.\n");
+                    } else {
+                        aux = inativas;
+                        while(aux != NULL) {
+                            imprimir_linha_relatorio(aux);
+                            aux = aux->proxima;
+                        }
+                    }
+
+                    free(aux);
+
+                    if(ativas == NULL) {
+                        wait_enter("\nNenhum dado registrado.\n");
+                    } else {
+                        aux = ativas;
+                        while(aux != NULL) {
+                            imprimir_linha_relatorio(aux);
+                            aux = aux->proxima;
+                        }
+                    }
+                }
+
                 break;
 
             case CATEGORY_REPORT_OPTION:
@@ -71,7 +132,7 @@ int main(void) {
 
             case EXIT_SYSTEM:
                 aux = NULL;
-                gravar("base_dados.bin", lista);
+                gravar(base_dados, lista);
                 liberar_lista(&lista);
                 break;
 

@@ -27,7 +27,7 @@ void converter(const char *buffer, MaquinaAutonoma **lista) {
     for (int i = 0; i < tamanho; i++) {
         cJSON *item = cJSON_GetArrayItem(array_dados, i);
         char *numero_registro = cJSON_GetObjectItem(item, "renamaut")->valuestring;
-        MaquinaAutonoma *aux = buscar(numero_registro, *lista);
+        MaquinaAutonoma *aux = buscar_numero_registro(numero_registro, *lista);
 
         if(aux != NULL) continue;
 
@@ -96,28 +96,63 @@ void importar(const char *filename, MaquinaAutonoma **lista) {
 }
 
 MaquinaAutonoma* ler(const char *filename) {
-    FILE *file = fopen(filename, "rb");
+    FILE *file = fopen(filename, "r");
 
     if (!file) {
+        printf("\nErro ao abrir o arquivo.");
         return NULL;
     }
 
     MaquinaAutonoma *lista = NULL;
-    MaquinaAutonoma *novo = NULL;
 
-    while (1) {
-        novo = malloc(sizeof(MaquinaAutonoma));
+    char linha[512];
 
-        if (!novo) {
-            printf("\nErro de alocação de memória.");
-            break;
-        }
+    while (fgets(linha, sizeof(linha), file)) {
+        MaquinaAutonoma *novo = malloc(sizeof(MaquinaAutonoma));
+        novo->localizacao = malloc(sizeof(Localizacao));
 
-        if (fread(novo, sizeof(MaquinaAutonoma), 1, file) != 1) {
-            free(novo);
-            break;
-        }
+        linha[strcspn(linha, "\n")] = '\0';
 
+        char *divisor = strtok(linha, "|");
+        if (!divisor) continue;
+        novo->numero_registro = strdup(divisor);
+
+        divisor = strtok(NULL, "|");
+        if (!divisor) continue;
+        novo->fabricante = strdup(divisor);
+
+        divisor = strtok(NULL, "|");
+        if (!divisor) continue;
+        novo->modelo = strdup(divisor);
+
+        divisor = strtok(NULL, "|");
+        if (!divisor) continue;
+        novo->categoria = strdup(divisor);
+
+        divisor = strtok(NULL, "|");
+        if (!divisor) continue;
+        novo->aplicacao = strdup(divisor);
+
+        divisor = strtok(NULL, "|");
+        if (!divisor) continue;
+        novo->ano_fabricacao = atoi(divisor);
+
+        divisor = strtok(NULL, "|");
+        if (!divisor) continue;
+        novo->responsavel = strdup(divisor);
+
+        divisor = strtok(NULL, "|");
+        if (!divisor) continue;
+        novo->status = atoi(divisor);
+
+        divisor = strtok(NULL, "|");
+        if (!divisor) continue;
+        novo->localizacao->cidade = strdup(divisor);
+
+        divisor = strtok(NULL, "|");
+        if (!divisor) continue;
+        novo->localizacao->uf = strdup(divisor);
+        
         novo->proxima = lista;
         lista = novo;
     }
@@ -128,7 +163,7 @@ MaquinaAutonoma* ler(const char *filename) {
 }
 
 void gravar(const char *filename, MaquinaAutonoma *lista) {
-    FILE *file = fopen(filename, "wb");
+    FILE *file = fopen(filename, "w");
 
     if (!file) {
         printf("\nErro ao abrir o arquivo.");
@@ -138,7 +173,18 @@ void gravar(const char *filename, MaquinaAutonoma *lista) {
     MaquinaAutonoma *aux = lista;
 
     while (aux != NULL) {
-        fwrite(aux, sizeof(MaquinaAutonoma), 1, file);
+        fprintf(file, "%s|%s|%s|%s|%s|%d|%s|%d|%s|%s\n",
+            aux->numero_registro,
+            aux->fabricante,
+            aux->modelo,
+            aux->categoria,
+            aux->aplicacao,
+            aux->ano_fabricacao,
+            aux->responsavel,
+            aux->status,
+            aux->localizacao->cidade,
+            aux->localizacao->uf);
+        
         aux = aux->proxima;
     }
 
