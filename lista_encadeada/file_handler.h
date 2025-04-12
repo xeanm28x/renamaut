@@ -6,30 +6,36 @@
 #include "operacoes_lista_encadeada.h"
 #include <cjson/cJSON.h>
 
-void converter(const char *buffer, MaquinaAutonoma **lista) {
+int converter(const char *buffer, MaquinaAutonoma *lista) {
     cJSON *base_dados = cJSON_Parse(buffer);
 
     if(base_dados == NULL) {
-        wait_enter("Ocorreu um erro na conversão JSON.");
-        return;
+        printf("\nOcorreu um erro na conversão JSON.\n");
+        return 0;
     }
 
     cJSON *array_dados = cJSON_GetObjectItem(base_dados, "dados");
 
     if(array_dados == NULL) {
         cJSON_Delete(base_dados);
-        wait_enter("Ocorreu um erro ao resgatar os dados após a conversão.");
-        return;
+        printf("\nOcorreu um erro ao resgatar os dados após a conversão.\n");
+        return 0;
     }
 
     int tamanho = cJSON_GetArraySize(array_dados);
+    char mensagem[512];
     
     for (int i = 0; i < tamanho; i++) {
         cJSON *item = cJSON_GetArrayItem(array_dados, i);
         char *numero_registro = cJSON_GetObjectItem(item, "renamaut")->valuestring;
-        MaquinaAutonoma *aux = buscar_numero_registro(numero_registro, *lista);
+        MaquinaAutonoma *aux = buscar_numero_registro(numero_registro, lista);
 
         if(aux != NULL) continue;
+
+        const char *p_renamaut = numero_registro;
+
+        if(validate_renamaut(p_renamaut) == 0)
+            continue;
 
         MaquinaAutonoma *novo = malloc(sizeof(MaquinaAutonoma));
 
@@ -49,18 +55,20 @@ void converter(const char *buffer, MaquinaAutonoma **lista) {
         novo->localizacao->uf = strdup(cJSON_GetObjectItem(loc_base, "uf")->valuestring);
         novo->proxima = NULL;
 
-        inserir(lista, novo);
+        inserir(&lista, novo);
     }
 
     cJSON_Delete(base_dados);
+
+    return 1;
 }
 
-void importar(const char *filename, MaquinaAutonoma **lista) {
+int importar(const char *filename, MaquinaAutonoma *lista) {
     FILE *file = fopen(filename, "r");
 
     if (!file) {
-        printf("\nErro ao abrir o arquivo.");
-        return;
+        printf("\nErro ao abrir o arquivo.\n");
+        return 0;
     }
 
     fseek(file, 0, SEEK_END);
@@ -73,39 +81,43 @@ void importar(const char *filename, MaquinaAutonoma **lista) {
 
     if (!buffer) {
         fclose(file);
-        printf("\nErro ao alocar memória para o arquivo.");
-        return;
+        printf("\nErro ao alocar memória para o arquivo.\n");
+        return 0;
     }
 
     size_t bytesRead = fread(buffer, 1, file_size, file);
 
     if (bytesRead != file_size) {
-        printf("\nErro na leitura do arquivo.");
+        printf("\nErro na leitura do arquivo.\n");
         free(buffer);
         fclose(file);
-        return;
+        return 0;
     }
 
     buffer[bytesRead] = '\0';
 
-    converter(buffer, lista);
+    int conversao = converter(buffer, lista);
 
     free(buffer);
 
     fclose(file);
+
+    if(conversao == 0) return 0;
+
+    return 1;
 }
 
 MaquinaAutonoma* ler(const char *filename) {
     FILE *file = fopen(filename, "r");
 
     if (!file) {
-        printf("\nErro ao abrir o arquivo.");
-        return NULL;
+        file = fopen(filename, "w+");
     }
 
     MaquinaAutonoma *lista = NULL;
 
     char linha[512];
+    char mensagem[512];
 
     while (fgets(linha, sizeof(linha), file)) {
         MaquinaAutonoma *novo = malloc(sizeof(MaquinaAutonoma));
@@ -114,7 +126,18 @@ MaquinaAutonoma* ler(const char *filename) {
         linha[strcspn(linha, "\n")] = '\0';
 
         char *divisor = strtok(linha, "|");
+        
         if (!divisor) continue;
+
+        const char *renamaut = strdup(divisor);
+
+        sprintf(mensagem, "\n%s\n", renamaut);
+        wait_enter(mensagem);
+
+        if(validate_renamaut(renamaut) == 0) {
+            continue;
+        }
+
         novo->numero_registro = strdup(divisor);
 
         divisor = strtok(NULL, "|");
@@ -166,7 +189,7 @@ void gravar(const char *filename, MaquinaAutonoma *lista) {
     FILE *file = fopen(filename, "w");
 
     if (!file) {
-        printf("\nErro ao abrir o arquivo.");
+        printf("\nErro ao abrir o arquivo.\n");
         return;
     }
 
