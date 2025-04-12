@@ -3,10 +3,11 @@
 #include "operacoes_lista_encadeada.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+// gcc main.c ../gov_dev/gov_dev.h ../gov_dev/gov_dev.o -o renamaut_exe -lcjson
+// ./renamaut_exe 
 int main(void) {
-    const char *arquivo_ermauf = "../base_dados/exemplo_100.ERMAUF";
-    const char *base_dados = "base_dados.txt";
+    char *arquivo_ermauf = "../base_dados/exemplo_100.ERMAUF";
+    char *base_dados = "base_dados.txt";
     char numero_registro[19];
     MaquinaAutonoma *lista = ler(base_dados);
     importar(arquivo_ermauf, &lista);
@@ -80,7 +81,7 @@ int main(void) {
 
                 if(fgets(responsavel, sizeof(responsavel), stdin) != NULL) {
                     responsavel[strcspn(responsavel, "\n")] = '\0';
-                    const char *cpf_cnpj = responsavel;
+                    char *cpf_cnpj = responsavel;
                     int eh_valido = validate_cpf(cpf_cnpj) == 1 || validate_cnpj(cpf_cnpj) == 1;
 
                     if(eh_valido == 0) {
@@ -94,11 +95,11 @@ int main(void) {
                         wait_enter("\nNão há nenhuma Máquina Autônoma pertencente a este responsável.\n");
                         break;
                     } else if (aux->status == 0){
-                        inserir(aux, &inativas);
+                        inserir(&aux, inativas);
                     } else {
                         aux->proxima = NULL;
-                        inserir(aux, &ativas);
-                    }
+                        inserir(&aux, ativas);
+                    } 
 
                     free(aux);
 
