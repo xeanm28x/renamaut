@@ -111,16 +111,25 @@ void inativar(MaquinaAutonoma **lista, MaquinaAutonoma *p) {
 
 void imprimir(MaquinaAutonoma *celula) {
     char mensagem[512];
-
+    
+    const char *numero_registro = celula->numero_registro;
+    char f_numero_registro[17];
     const char *fabricante = celula->fabricante;
     const char *categoria = celula->categoria;
     const char *aplicacao = celula->aplicacao;
+    const char *responsavel = celula->responsavel;
     const char *uf = celula->localizacao->uf;
 
     const char *nome_fabricante = get_manufacturer_name_by_id(fabricante);
     const char *desc_categoria = get_category_name_by_code(categoria);
     const char *desc_aplicacao = get_application_description_by_code(aplicacao);
     const char *desc_uf = get_state_name_by_abbr(uf);
+    char f_responsavel[15];
+
+    apply_mask_renamaut(numero_registro, f_numero_registro);
+
+    if(strlen(responsavel) < 14) apply_mask_cpf(responsavel, f_responsavel);
+    else apply_mask_cnpj(responsavel, f_responsavel);
 
     sprintf(
         mensagem,
@@ -134,13 +143,13 @@ void imprimir(MaquinaAutonoma *celula) {
         "Status: %s\n"
         "Cidade: %s\n"
         "Estado: %s\n",
-        celula->numero_registro,
+        f_numero_registro,
         nome_fabricante,
         celula->modelo,
         desc_categoria,
         desc_aplicacao,
         celula->ano_fabricacao,
-        celula->responsavel,
+        f_responsavel,
         celula->status == 0 ? "Inativa" : "Ativa",
         celula->localizacao->cidade,
         desc_uf);
