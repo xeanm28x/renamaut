@@ -6,12 +6,14 @@
 #include <string.h>
 #include "../gov_dev/gov_dev.h"
 
-typedef struct {
+typedef struct
+{
     char *cidade;
     char *uf;
 } Localizacao;
 
-typedef struct MaquinaAutonoma {
+typedef struct MaquinaAutonoma
+{
     char *numero_registro;
     char *fabricante;
     char *modelo;
@@ -24,45 +26,58 @@ typedef struct MaquinaAutonoma {
     struct MaquinaAutonoma *proxima;
 } MaquinaAutonoma;
 
-MaquinaAutonoma *buscar_numero_registro(char *numero_registro, MaquinaAutonoma *lista) {
+MaquinaAutonoma *buscar_numero_registro(const char *numero_registro, MaquinaAutonoma *lista)
+{
     MaquinaAutonoma *p = lista;
 
-    while(p != NULL) {
-        if(strcmp(p->numero_registro, numero_registro) == 0) return p;
+    while (p != NULL)
+    {
+        if (strcmp(p->numero_registro, numero_registro) == 0)
+            return p;
         p = p->proxima;
     }
 
     return NULL;
 }
 
-MaquinaAutonoma *buscar_responsavel(char *responsavel, MaquinaAutonoma *lista) {
+MaquinaAutonoma *buscar_responsavel(char *responsavel, MaquinaAutonoma *lista)
+{
     MaquinaAutonoma *p = lista;
 
-    while(p != NULL) {
-        if(strcmp(p->responsavel, responsavel) == 0) return p;
+    while (p != NULL)
+    {
+        if (strcmp(p->responsavel, responsavel) == 0)
+            return p;
         p = p->proxima;
     }
 
     return NULL;
 }
 
-void inserir(MaquinaAutonoma **lista, MaquinaAutonoma *novo) {
+void inserir(MaquinaAutonoma **lista, MaquinaAutonoma *novo)
+{
     novo->proxima = NULL;
 
-    if(*lista == NULL) *lista = novo;
-    else {
+    if (*lista == NULL)
+        *lista = novo;
+    else
+    {
         MaquinaAutonoma *aux = *lista;
 
-        while(aux->proxima != NULL) aux = aux->proxima;
+        while (aux->proxima != NULL)
+            aux = aux->proxima;
 
         aux->proxima = novo;
     }
 }
 
-void remover(MaquinaAutonoma **lista, MaquinaAutonoma *p) {
-    if(*lista == NULL || p == NULL) return;
+void remover(MaquinaAutonoma **lista, MaquinaAutonoma *p)
+{
+    if (*lista == NULL || p == NULL)
+        return;
 
-    if(*lista == p) {
+    if (*lista == p)
+    {
         *lista = p->proxima;
 
         free(p->numero_registro);
@@ -81,9 +96,11 @@ void remover(MaquinaAutonoma **lista, MaquinaAutonoma *p) {
 
     MaquinaAutonoma *aux = *lista;
 
-    while(aux != NULL && aux->proxima != p) aux = aux->proxima;
+    while (aux != NULL && aux->proxima != p)
+        aux = aux->proxima;
 
-    if (aux == NULL) return;
+    if (aux == NULL)
+        return;
 
     aux->proxima = p->proxima;
 
@@ -99,19 +116,23 @@ void remover(MaquinaAutonoma **lista, MaquinaAutonoma *p) {
     free(p);
 }
 
-void inativar(MaquinaAutonoma **lista, MaquinaAutonoma *p) {
-    if(*lista != NULL) {
+void inativar(MaquinaAutonoma **lista, MaquinaAutonoma *p)
+{
+    if (*lista != NULL)
+    {
         MaquinaAutonoma *aux = *lista;
-        
-        while(aux != p) aux = aux->proxima;
+
+        while (aux != p)
+            aux = aux->proxima;
 
         aux->status = 0;
     }
 }
 
-void imprimir(MaquinaAutonoma *celula) {
+void imprimir(MaquinaAutonoma *celula)
+{
     char mensagem[512];
-    
+
     const char *numero_registro = celula->numero_registro;
     char f_numero_registro[17];
     const char *fabricante = celula->fabricante;
@@ -128,8 +149,10 @@ void imprimir(MaquinaAutonoma *celula) {
 
     apply_mask_renamaut(numero_registro, f_numero_registro);
 
-    if(strlen(responsavel) < 14) apply_mask_cpf(responsavel, f_responsavel);
-    else apply_mask_cnpj(responsavel, f_responsavel);
+    if (strlen(responsavel) < 14)
+        apply_mask_cpf(responsavel, f_responsavel);
+    else
+        apply_mask_cnpj(responsavel, f_responsavel);
 
     sprintf(
         mensagem,
@@ -157,7 +180,8 @@ void imprimir(MaquinaAutonoma *celula) {
     wait_enter(mensagem);
 }
 
-void imprimir_linha_relatorio(MaquinaAutonoma *celula) {
+void imprimir_linha_relatorio(MaquinaAutonoma *celula)
+{
     char mensagem[512];
 
     const char *fabricante = celula->fabricante;
@@ -184,11 +208,13 @@ void imprimir_linha_relatorio(MaquinaAutonoma *celula) {
     wait_enter(mensagem);
 }
 
-void liberar_lista(MaquinaAutonoma **lista) {
+void liberar_lista(MaquinaAutonoma **lista)
+{
     MaquinaAutonoma *aux = *lista;
     MaquinaAutonoma *atual;
 
-    while(aux != NULL) {
+    while (aux != NULL)
+    {
         atual = aux;
         aux = aux->proxima;
         remover(lista, atual);
