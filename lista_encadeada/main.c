@@ -36,23 +36,23 @@ int main(void)
                     ;
             }
 
-            const char *c_nr = numero_registro;
+            const char *nr1 = numero_registro;
 
             if (strchr(numero_registro, '-') != NULL)
             {
-                remove_mask(c_nr, numero_registro);
+                remove_mask(nr1, numero_registro);
             }
 
             if (validate_renamaut(numero_registro) == 0)
             {
-                wait_enter("\nNúmero de registro inválido.\n");
+                wait_enter("\nNúmero de registro inválido.");
                 break;
             }
 
-            aux = buscar_numero_registro(c_nr, lista);
+            aux = buscar_numero_registro(nr1, lista);
 
             if (aux == NULL)
-                wait_enter("\nMáquina Autônoma não encontrada.\n");
+                wait_enter("\nMáquina Autônoma não encontrada.");
             else
             {
                 imprimir(aux);
@@ -60,41 +60,60 @@ int main(void)
             break;
 
         case CHANGE_STATUS_OPTION:
-            // printf("\nNúmero de registro: ");
+            printf("\nNúmero de registro: ");
 
-            // if (fgets(numero_registro, sizeof(numero_registro), stdin) != NULL) {
-            //     numero_registro[strcspn(numero_registro, "\n")] = '\0';
+            fgets(numero_registro, sizeof(numero_registro), stdin);
 
-            //     if(strchr(numero_registro, '-') != NULL) {
-            //         const char *c_nr = numero_registro;
-            //         remove_mask(c_nr, numero_registro);
-            //     }
+            numero_registro[strcspn(numero_registro, "\n")] = '\0';
 
-            //     aux = buscar_numero_registro(numero_registro, lista);
+            if (!strchr(numero_registro, '\n') && !feof(stdin))
+            {
+                int c;
+                while ((c = getchar()) != '\n' && c != EOF)
+                    ;
+            }
 
-            //     if(aux == NULL) wait_enter("\nMáquina Autônoma não encontrada.\n");
-            //     else {
-            //         if(aux->status == 0){
-            //             wait_enter("\nMáquina Autônoma já está inativa.\n");
-            //             break;
-            //         }
+            const char *nr2 = numero_registro;
 
-            //         imprimir(aux);
+            if (strchr(numero_registro, '-') != NULL)
+            {
+                remove_mask(nr2, numero_registro);
+            }
 
-            //         char mensagem[512];
+            if (validate_renamaut(numero_registro) == 0)
+            {
+                wait_enter("\nNúmero de registro inválido.");
+                break;
+            }
 
-            //         sprintf(mensagem, "\nTem certeza que deseja inativar esta máquina? Essa operação é irreversível. [S\\N] ");
+            aux = buscar_numero_registro(nr2, lista);
 
-            //         int confirmacao = wait_confirmation(mensagem);
+            if (aux == NULL)
+                wait_enter("\nMáquina Autônoma não encontrada.");
+            else
+            {
+                if (aux->status == 1)
+                {
+                    char mensagem[512];
 
-            //         if(confirmacao == 1) {
-            //             inativar(&lista, aux);
-            //             wait_enter("\n\nMáquina inativada com sucesso!\n");
-            //         }
+                    sprintf(mensagem, "\nTem certeza que deseja inativar esta máquina? Essa operação é irreversível. [S\\N] ");
 
-            //         if(confirmacao == 0) wait_enter("\n\nCancelando...\n");
-            //     }
-            // }
+                    int confirmacao = wait_confirmation(mensagem);
+
+                    if (confirmacao == 1)
+                    {
+                        inativar(&lista, aux);
+                        wait_enter("\n\nMáquina inativada com sucesso!");
+                    }
+
+                    if (confirmacao == 0)
+                        wait_enter("\n\nCancelando...");
+                }
+                else
+                {
+                    wait_enter("\nA Máquina informada já está inativa.");
+                }
+            }
             break;
 
         case RESPONSABILITY_REPORT_OPTION:

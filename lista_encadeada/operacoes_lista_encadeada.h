@@ -156,7 +156,7 @@ void imprimir(MaquinaAutonoma *celula)
 
     sprintf(
         mensagem,
-        "\nNúmero de Registro: %s\n"
+        "Número de Registro: %s\n"
         "Fabricante: %s\n"
         "Modelo: %s\n"
         "Categoria: %s\n"
