@@ -7,7 +7,7 @@
 int main(void)
 {
     const char *base_renamaut = "base_dados/base_renamaut.txt";
-    char *base_dados = "base_dados/exemplo_20.ERMAUF";
+    char *base_dados = "base_dados/exemplo_1000.ERMAUF";
     char numero_registro[20];
     MaquinaAutonoma *lista = NULL;
     MaquinaAutonoma *aux = NULL;
@@ -117,65 +117,118 @@ int main(void)
             break;
 
         case RESPONSABILITY_REPORT_OPTION:
-            // char responsavel[15];
-            // MaquinaAutonoma *ativas = NULL;
-            // MaquinaAutonoma *inativas = NULL;
+            char responsavel[20];
+            MaquinaAutonoma *ativas = NULL;
+            MaquinaAutonoma *inativas = NULL;
 
-            // printf("\nCPF ou CNPJ: ");
+            printf("\nCPF ou CNPJ: ");
 
-            // if(fgets(responsavel, sizeof(responsavel), stdin) != NULL) {
-            //     responsavel[strcspn(responsavel, "\n")] = '\0';
-            //     const char *cpf_cnpj = responsavel;
-            //     int eh_valido = validate_cpf(cpf_cnpj) == 1 || validate_cnpj(cpf_cnpj) == 1;
+            fgets(responsavel, sizeof(responsavel), stdin);
 
-            //     if(eh_valido == 0) {
-            //         wait_enter("\nCPF ou CNPJ inválido.\n");
-            //         break;
-            //     }
+            responsavel[strcspn(responsavel, "\n")] = '\0';
 
-            //     if(strchr(responsavel, '.') != NULL)
-            //         remove_mask(cpf_cnpj, responsavel);
+            if (strchr(responsavel, '.') != NULL)
+                remove_mask(responsavel, responsavel);
 
-            //     aux = buscar_responsavel(responsavel, lista);
+            if ((strlen(responsavel) == 11 && validate_cpf(responsavel) == 0) || (strlen(responsavel) == 14 && validate_cnpj(responsavel) == 0) || strlen(responsavel) < 11 || strlen(responsavel) > 14)
+            {
+                wait_enter("\nNúmero de CPF/CNPJ inválido.");
+                break;
+            }
 
-            //     if(aux == NULL)  {
-            //         wait_enter("\nNão há nenhuma Máquina Autônoma pertencente a este responsável.\n");
-            //         break;
-            //     }
-            // } else if (aux->status == 0){
-            //     inserir(aux, &inativas);
-            // } else {
-            //     aux->proxima = NULL;
-            //     inserir(aux, &ativas);
-            // }
+            relatorio_responsavel(responsavel, lista, &ativas, &inativas);
 
-            // free(aux);
+            if (inativas == NULL)
+            {
+                wait_enter("\nNão há Máquinas Autônomas inativas para este responsável.");
+            }
+            else
+            {
+                printf("\n");
+                aux = inativas;
+                while (aux != NULL)
+                {
+                    imprimir_linha_relatorio_fabricante(aux);
+                    aux = aux->proxima;
+                }
+            }
 
-            // if(inativas == NULL) {
-            //     wait_enter("\nNenhum dado registrado.\n");
-            // } else {
-            //     aux = inativas;
-            //     while(aux != NULL) {
-            //         imprimir_linha_relatorio(aux);
-            //         aux = aux->proxima;
-            //     }
-            // }
+            printf("\n");
 
-            // free(aux);
-
-            // if(ativas == NULL) {
-            //     wait_enter("\nNenhum dado registrado.\n");
-            // } else {
-            //     aux = ativas;
-            //     while(aux != NULL) {
-            //         imprimir_linha_relatorio(aux);
-            //         aux = aux->proxima;
-            //     }
-            // }
-            // }
+            if (ativas == NULL)
+            {
+                wait_enter("\nNão há Máquinas Autônomas ativas para este responsável.");
+            }
+            else
+            {
+                printf("\n\n");
+                aux = ativas;
+                while (aux != NULL)
+                {
+                    imprimir_linha_relatorio_fabricante(aux);
+                    aux = aux->proxima;
+                }
+            }
             break;
 
         case CATEGORY_REPORT_OPTION:
+            printf("\nCategoria: ");
+
+            char categoria[30];
+
+            fgets(categoria, sizeof(categoria), stdin);
+
+            categoria[strcspn(categoria, "\n")] = '\0';
+
+            if (!strchr(categoria, '\n') && !feof(stdin))
+            {
+                int c;
+                while ((c = getchar()) != '\n' && c != EOF)
+                    ;
+            }
+
+            if (strlen(categoria) == 0)
+            {
+                wait_enter("\nCategoria inválida.");
+                break;
+            }
+
+            const char *cod_categoria = NULL;
+
+            if (strlen(categoria) == 6)
+            {
+                aux = buscar_categoria(categoria, lista);
+
+                if (aux != NULL)
+                {
+                    cod_categoria = categoria;
+                }
+            }
+            else
+            {
+                cod_categoria = get_category_code_by_name(categoria);
+            }
+
+            if (cod_categoria == NULL)
+            {
+                wait_enter("\nCategoria não encontrada.");
+                break;
+            }
+
+            EstadoGrupo *grupo_estados = NULL;
+
+            relatorio_categoria(cod_categoria, lista, &grupo_estados);
+
+            if (grupo_estados == NULL)
+            {
+                wait_enter("\nNenhuma máquina ativa encontrada para essa categoria.");
+            }
+            else
+            {
+                printf("\n");
+                imprimir_linha_relatorio_categoria(grupo_estados);
+            }
+
             break;
 
         case EXIT_SYSTEM:
