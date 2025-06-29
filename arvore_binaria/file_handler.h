@@ -1,13 +1,12 @@
 #ifndef FILE_HANDLER_H
 #define FILE_HANDLER_H
 
-#include "../gov_dev/gov_dev.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "operacoes_lista_encadeada.h"
+#include "operacoes_arvore_binaria.h"
 #include <cjson/cJSON.h>
 
-void converter(const char *buffer, MaquinaAutonoma **lista)
+void converter(const char *buffer, MaquinaAutonoma **arvore)
 {
     cJSON *base_dados = cJSON_Parse(buffer);
 
@@ -35,9 +34,9 @@ void converter(const char *buffer, MaquinaAutonoma **lista)
     {
         cJSON *item = cJSON_GetArrayItem(array_dados, i);
         char *numero_registro = cJSON_GetObjectItem(item, "renamaut")->valuestring;
-        MaquinaAutonoma *aux = buscar_numero_registro(numero_registro, *lista);
+        MaquinaAutonoma *atual = buscar_numero_registro(numero_registro, *arvore);
 
-        if (aux != NULL)
+        if (atual != NULL)
             continue;
 
         const char *p_renamaut = numero_registro;
@@ -47,7 +46,7 @@ void converter(const char *buffer, MaquinaAutonoma **lista)
 
         MaquinaAutonoma *novo = malloc(sizeof(MaquinaAutonoma));
 
-        novo->numero_registro = strdup(cJSON_GetObjectItem(item, "renamaut")->valuestring);
+        novo->renamaut = strdup(cJSON_GetObjectItem(item, "renamaut")->valuestring);
         novo->fabricante = strdup(cJSON_GetObjectItem(item, "fab")->valuestring);
         novo->modelo = strdup(cJSON_GetObjectItem(item, "mod")->valuestring);
         novo->categoria = strdup(cJSON_GetObjectItem(item, "cat")->valuestring);
@@ -61,15 +60,17 @@ void converter(const char *buffer, MaquinaAutonoma **lista)
         novo->localizacao = malloc(sizeof(Localizacao));
         novo->localizacao->cidade = strdup(cJSON_GetObjectItem(loc_base, "cidade")->valuestring);
         novo->localizacao->uf = strdup(cJSON_GetObjectItem(loc_base, "uf")->valuestring);
-        novo->proxima = NULL;
 
-        inserir(lista, novo);
+        novo->esq = NULL;
+        novo->dir = NULL;
+
+        inserir(arvore, novo);
     }
 
     cJSON_Delete(base_dados);
 }
 
-void importar_base(const char *filename, MaquinaAutonoma **lista)
+void importar_base(const char *filename, MaquinaAutonoma **arvore)
 {
     FILE *file = fopen(filename, "r");
 
@@ -109,7 +110,7 @@ void importar_base(const char *filename, MaquinaAutonoma **lista)
 
     buffer[bytesRead] = '\0';
 
-    converter(buffer, lista);
+    converter(buffer, arvore);
     free(buffer);
     fclose(file);
 }
@@ -118,22 +119,24 @@ void liberar(MaquinaAutonoma *m)
 {
     if (!m)
         return;
-    free(m->numero_registro);
+    free(m->renamaut);
     free(m->fabricante);
     free(m->modelo);
     free(m->categoria);
     free(m->aplicacao);
     free(m->responsavel);
+
     if (m->localizacao)
     {
         free(m->localizacao->cidade);
         free(m->localizacao->uf);
         free(m->localizacao);
     }
+
     free(m);
 }
 
-void importar_renamaut(const char *filename, MaquinaAutonoma **lista)
+void importar_renamaut(const char *filename, MaquinaAutonoma **arvore)
 {
     FILE *file = fopen(filename, "r");
 
@@ -178,11 +181,11 @@ void importar_renamaut(const char *filename, MaquinaAutonoma **lista)
         if (!divisor)
             continue;
 
-        novo->numero_registro = strdup(divisor);
+        novo->renamaut = strdup(divisor);
 
-        if (validate_renamaut(novo->numero_registro) == 0)
+        if (validate_renamaut(novo->renamaut) == 0)
         {
-            free(novo->numero_registro);
+            free(novo->renamaut);
             free(novo->localizacao);
             free(novo);
             continue;
@@ -277,38 +280,45 @@ void importar_renamaut(const char *filename, MaquinaAutonoma **lista)
         }
 
         novo->localizacao->uf = strdup(divisor);
-        novo->proxima = *lista;
-        *lista = novo;
+        novo->esq = NULL;
+        novo->dir = NULL;
+        inserir(arvore, novo);
     }
 
     fclose(file);
 }
 
-void gravar(const char *filename, MaquinaAutonoma *lista)
+void gravar_arvore(FILE *file, MaquinaAutonoma *arvore)
+{
+    MaquinaAutonoma *atual = arvore;
+
+    if (atual == NULL)
+        return;
+
+    fprintf(file, "%s|%s|%s|%s|%s|%d|%s|%d|%s|%s\n",
+            atual->renamaut,
+            atual->fabricante,
+            atual->modelo,
+            atual->categoria,
+            atual->aplicacao,
+            atual->ano_fabricacao,
+            atual->responsavel,
+            atual->status,
+            atual->localizacao->cidade,
+            atual->localizacao->uf);
+
+    gravar_arvore(file, atual->esq);
+    gravar_arvore(file, atual->dir);
+}
+
+void gravar(const char *filename, MaquinaAutonoma *arvore)
 {
     FILE *file = fopen(filename, "w");
 
     if (!file)
         return;
 
-    MaquinaAutonoma *aux = lista;
-
-    while (aux != NULL)
-    {
-        fprintf(file, "%s|%s|%s|%s|%s|%d|%s|%d|%s|%s\n",
-                aux->numero_registro,
-                aux->fabricante,
-                aux->modelo,
-                aux->categoria,
-                aux->aplicacao,
-                aux->ano_fabricacao,
-                aux->responsavel,
-                aux->status,
-                aux->localizacao->cidade,
-                aux->localizacao->uf);
-
-        aux = aux->proxima;
-    }
+    gravar_arvore(file, arvore);
 
     fclose(file);
 }

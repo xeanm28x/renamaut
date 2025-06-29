@@ -1,20 +1,20 @@
 #include "../gov_dev/gov_dev.h"
 #include "file_handler.h"
-#include "operacoes_lista_encadeada.h"
+#include "operacoes_arvore_binaria.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(void)
 {
-    const char *base_renamaut = "base_dados/base_renamaut_le.txt";
+    const char *base_renamaut = "base_dados/base_renamaut_ab.txt";
     char *base_dados = "base_dados/exemplo_1000.ERMAUF";
     char numero_registro[20];
-    MaquinaAutonoma *lista = NULL;
+    MaquinaAutonoma *arvore = NULL;
     MaquinaAutonoma *aux = NULL;
     int op;
 
-    importar_renamaut(base_renamaut, &lista);
-    importar_base(base_dados, &lista);
+    importar_renamaut(base_renamaut, &arvore);
+    importar_base(base_dados, &arvore);
 
     do
     {
@@ -49,17 +49,21 @@ int main(void)
                 break;
             }
 
-            aux = buscar_numero_registro(nr1, lista);
+            aux = buscar_numero_registro(nr1, arvore);
 
             if (aux == NULL)
+            {
                 wait_enter("\nMáquina Autônoma não encontrada.");
+            }
             else
             {
                 imprimir(aux);
             }
+
             break;
 
         case CHANGE_STATUS_OPTION:
+
             printf("\nNúmero de registro: ");
 
             fgets(numero_registro, sizeof(numero_registro), stdin);
@@ -86,7 +90,7 @@ int main(void)
                 break;
             }
 
-            aux = buscar_numero_registro(nr2, lista);
+            aux = buscar_numero_registro(nr2, arvore);
 
             if (aux == NULL)
                 wait_enter("\nMáquina Autônoma não encontrada.");
@@ -102,7 +106,7 @@ int main(void)
 
                     if (confirmacao == 1)
                     {
-                        inativar(&lista, aux);
+                        inativar(&arvore, aux);
                         wait_enter("\n\nMáquina inativada com sucesso!");
                     }
 
@@ -114,6 +118,7 @@ int main(void)
                     wait_enter("\nA Máquina informada já está inativa.");
                 }
             }
+
             break;
 
         case RESPONSABILITY_REPORT_OPTION:
@@ -136,7 +141,7 @@ int main(void)
                 break;
             }
 
-            relatorio_responsavel(responsavel, lista, &ativas, &inativas);
+            relatorio_responsavel(responsavel, arvore, &ativas, &inativas);
 
             if (inativas == NULL)
             {
@@ -145,12 +150,10 @@ int main(void)
             else
             {
                 printf("\n");
+
                 aux = inativas;
-                while (aux != NULL)
-                {
-                    imprimir_linha_relatorio_fabricante(aux);
-                    aux = aux->proxima;
-                }
+
+                imprimir_linha_relatorio_fabricante(aux);
             }
 
             printf("\n");
@@ -161,14 +164,13 @@ int main(void)
             }
             else
             {
-                printf("\n\n");
+                printf("\n");
+
                 aux = ativas;
-                while (aux != NULL)
-                {
-                    imprimir_linha_relatorio_fabricante(aux);
-                    aux = aux->proxima;
-                }
+
+                imprimir_linha_relatorio_fabricante(aux);
             }
+
             break;
 
         case CATEGORY_REPORT_OPTION:
@@ -197,7 +199,7 @@ int main(void)
 
             if (strlen(categoria) == 6)
             {
-                aux = buscar_categoria(categoria, lista);
+                aux = buscar_categoria(categoria, arvore);
 
                 if (aux != NULL)
                 {
@@ -217,7 +219,7 @@ int main(void)
 
             EstadoGrupo *grupo_estados = NULL;
 
-            relatorio_categoria(cod_categoria, lista, &grupo_estados);
+            relatorio_categoria(cod_categoria, arvore, &grupo_estados);
 
             if (grupo_estados == NULL)
             {
@@ -229,12 +231,6 @@ int main(void)
                 imprimir_linha_relatorio_categoria(grupo_estados);
             }
 
-            break;
-
-        case EXIT_SYSTEM:
-            aux = NULL;
-            gravar(base_renamaut, lista);
-            liberar_lista(&lista);
             break;
         }
     } while (op != EXIT_SYSTEM);
