@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "log.h"
 
 #define MAX_MODELO 50
 #define TAM_CHAVE 17  // incluindo '\0' para "XXX-XXX-XXXX-XXXXXX"
@@ -61,10 +62,14 @@ static inline Registro* buscar(HashTable* ht, const char* chave) {
     int idx = funcao_hash(chave, ht->tamanho);
     Registro* atual = ht->tabela[idx];
     while (atual) {
-        if (strcmp(atual->renamaut, chave) == 0)
+        LOG_DEBUG("Comparando com '%s'", atual->renamaut);
+        if (strcmp(atual->renamaut, chave) == 0){
+            LOG_DEBUG("Chave '%s', Responsável '%s' ", atual->renamaut, atual->responsavel);
             return atual;
+        }
         atual = atual->prox;
     }
+    LOG_DEBUG("Chave '%s' não encontrada", chave);
     return NULL;
 }
 

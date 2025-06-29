@@ -1,0 +1,25 @@
+[persistencia.h:106] Importando registro: renamaut=UAVFLYERIC79F514, fabricante=66412379578580, modelo=Ericsson SkyNet, categoria=160722, aplicacao=610578, ano=2021, responsavel=98761388718, status=inativo, cidade=Porto Alegre, estado=RS
+[persistencia.h:106] Importando registro: renamaut=SWISUBSEAG74970C, fabricante=74538319746421, modelo=Seagate SeaExplorer, categoria=342310, aplicacao=510467, ano=2023, responsavel=22484939833, status=inativo, cidade=Três Lagoas, estado=MS
+[persistencia.h:106] Importando registro: renamaut=SWISUBWDIG613521, fabricante=49092001630031, modelo=WD SeaScout, categoria=342310, aplicacao=510467, ano=2020, responsavel=21602231907, status=ativo, cidade=Santos, estado=SP
+[persistencia.h:106] Importando registro: renamaut=FARAGPJHDR422130, fabricante=02805227611953, modelo=John Deere Autonomous Field Rover, categoria=281850, aplicacao=101234, ano=2022, responsavel=96622047766, status=ativo, cidade=Maringá, estado=PR
+[persistencia.h:106] Importando registro: renamaut=UUVSEAWDIG618488, fabricante=49092001630031, modelo=WD CoralMapper, categoria=380966, aplicacao=954412, ano=2020, responsavel=32344473904, status=ativo, cidade=Manaus, estado=AM
+[persistencia.h:106] Importando registro: renamaut=VEILOGKUKA798D37, fabricante=57202698687949, modelo=KUKA omniMove, categoria=250123, aplicacao=909012, ano=2023, responsavel=27274902598, status=ativo, cidade=Porto Alegre, estado=RS
+[persistencia.h:106] Importando registro: renamaut=DRNFLYSONY891380, fabricante=23006226066899, modelo=Sony SkyEye, categoria=103456, aplicacao=610578, ano=2023, responsavel=58014359640, status=ativo, cidade=Porto Alegre, estado=RS
+[persistencia.h:106] Importando registro: renamaut=UGVINSXERO419334, fabricante=72190305388171, modelo=Xerox InspectionBot, categoria=270844, aplicacao=404567, ano=2017, responsavel=69800363351, status=ativo, cidade=Anápolis, estado=GO
+[persistencia.h:106] Importando registro: renamaut=EDUEDURHTX3924B7, fabricante=14144616036501, modelo=Red Hat EduBot, categoria=661626, aplicacao=808901, ano=2023, responsavel=02871241260, status=ativo, cidade=Manaus, estado=AM
+[persistencia.h:106] Importando registro: renamaut=EXOASMCYBE965A66, fabricante=20676010433187, modelo=HAL Medical, categoria=460237, aplicacao=505678, ano=2024, responsavel=01782746071420, status=ativo, cidade=Salvador, estado=BA
+[persistencia.h:106] Importando registro: renamaut=UGVINSMOTO9D9600, fabricante=84789260775171, modelo=Motorola InspectionBot, categoria=270844, aplicacao=404567, ano=2022, responsavel=10638979803, status=ativo, cidade=Rio de Janeiro, estado=RJ
+[persistencia.h:106] Importando registro: renamaut=CLNDOMHPXX17481B, fabricante=75422598061679, modelo=HP HomeBot, categoria=541482, aplicacao=606789, ano=2022, responsavel=40947397850, status=ativo, cidade=Porto Alegre, estado=RS
+[persistencia.h:106] Importando registro: renamaut=EDUTOUAPPLE54874, fabricante=04274734429035, modelo=Apple SiriBot, categoria=661626, aplicacao=621478, ano=2022, responsavel=97659395580, status=ativo, cidade=Três Lagoas, estado=MS
+[persistencia.h:106] Importando registro: renamaut=UGVINSTOSHD07183, fabricante=02869738021970, modelo=Toshiba InspectionBot, categoria=270844, aplicacao=404567, ano=2021, responsavel=79362015960986, status=ativo, cidade=Rio de Janeiro, estado=RJ
+[persistencia.h:106] Importando registro: renamaut=WALWARTREE496154, fabricante=86747523466820, modelo=Unitree Aliengo, categoria=222186, aplicacao=210134, ano=2024, responsavel=77848950376901, status=ativo, cidade=Brasília, estado=DF
+[persistencia.h:106] Importando registro: renamaut=EDUPARUBTE623954, fabricante=84754158333545, modelo=UBTECH Walker, categoria=661626, aplicacao=643278, ano=2022, responsavel=94727467305, status=ativo, cidade=Belo Horizonte, estado=MG
+[persistencia.h:106] Importando registro: renamaut=DRNRCAALCA145529, fabricante=17035488345680, modelo=Alcatel Recon Scout, categoria=103456, aplicacao=509567, ano=2022, responsavel=18326611807484, status=ativo, cidade=Campinas, estado=SP
+[persistencia.h:106] Importando registro: renamaut=CLNDOMSONY28D17E, fabricante=23006226066899, modelo=Sony AiRo, categoria=541482, aplicacao=606789, ano=2020, responsavel=87213047426, status=ativo, cidade=Porto Alegre, estado=RS
+[persistencia.h:106] Importando registro: renamaut=VEILOGKUKA034699, fabricante=57202698687949, modelo=KUKA omniMove, categoria=250123, aplicacao=909012, ano=2024, responsavel=93976374081535, status=ativo, cidade=Recife, estado=PE
+[persistencia.h:106] Importando registro: renamaut=EXOIDOEKSO011739, fabricante=15836554067009, modelo=EksoGT, categoria=460237, aplicacao=943512, ano=2020, responsavel=50564124881190, status=ativo, cidade=Belo Horizonte, estado=MG
+[main.c:42] Buscando registro: 'EXOIDOEKSO011739'
+[operacoes_hash.h:65] Comparando com 'EXOIDOEKSO011739'
+[operacoes_hash.h:67] Chave 'EXOIDOEKSO011739', Responsável '50564124881190' 
+[main.c:66] Chamando imprimir para 'EXOIDOEKSO011739'
+[main.c:42] Buscando registro: '3'

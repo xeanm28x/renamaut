@@ -3,6 +3,8 @@
 #include "file_handler.h"
 #include "persistencia.h"
 #include "relatorios.h"
+#include "log.h"
+#include "clock.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,15 +13,20 @@
 
 int main(void)
 {
+    fclose(fopen("debug.log", "w"));  // limpa o arquivo
+    fclose(fopen("relatorio_tempo.log", "w"));  // limpa o arquivo de log
     const char *arquivo_txt = "../base_dados/base_renamaut.txt";
     const char *arquivo_json = "../base_dados/exemplo_20.ERMAUF";
     char numero_registro[20];
     HashTable *tabela = criar_tabela(TAM_TABELA);
     int op;
     // carregar dados persistentes (binário)
+    clock_t ini = clock();
     importar_txt(tabela, arquivo_txt);
+    clock_t fim = clock();
+    medir_tempo(ini, fim, "Importação JSON");
     // importar JSON se existir
-    importar_json(tabela, arquivo_json);
+    // importar_json(tabela, arquivo_json);
 
     do
     {
@@ -27,30 +34,47 @@ int main(void)
 
         switch (op)
         {
-        case SEARCH_OPTION:
+            case SEARCH_OPTION:
             printf("\nNúmero de registro: ");
             fgets(numero_registro, sizeof(numero_registro), stdin);
             numero_registro[strcspn(numero_registro, "\n")] = '\0';
-
+        
+            LOG_DEBUG("Buscando registro: '%s'", numero_registro);
+        
             const char *nr1 = numero_registro;
             if (strchr(numero_registro, '-') != NULL)
                 remove_mask(nr1, numero_registro);
-
-            if (validate_renamaut(numero_registro) == 0)
+        
             {
-                wait_enter("\nNúmero de registro inválido.");
-                break;
-            }
-
-            {
+                clock_t ini = clock();
+        
+                if (validate_renamaut(numero_registro) == 0) {
+                    clock_t fim = clock();
+                    medir_tempo(ini, fim, "Validação RENAMAUT");
+                    wait_enter("\nNúmero de registro inválido.");
+                    break;
+                }
+        
                 Registro *reg = buscar(tabela, nr1);
-                if (reg == NULL)
+                clock_t fim = clock();
+        
+                if (reg == NULL) {
+                    medir_tempo(ini, fim, "Busca RENAMAUT (sem sucesso)");
                     wait_enter("\nMáquina Autônoma não encontrada.");
-                else
+                } else {
+                    medir_tempo(ini, fim, "Busca RENAMAUT (sucesso)");
+                    LOG_DEBUG("Chamando imprimir para '%s'", reg->renamaut);
+        
+                    printf("%s;%s;%s;%d;%s;%s-%s\n",
+                        reg->renamaut, reg->responsavel, reg->modelo,
+                        reg->ano, reg->status, reg->cidade, reg->estado);
+        
                     imprimir(reg);
+                    wait_enter("\nPressione Enter para continuar...");
+                }
             }
             break;
-
+        
         case CHANGE_STATUS_OPTION:
             printf("\nNúmero de registro: ");
             fgets(numero_registro, sizeof(numero_registro), stdin);

@@ -2,6 +2,7 @@
 #define PERSISTENCIA_H
 
 #include "operacoes_hash.h"
+#include "log.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -102,10 +103,12 @@ static inline void importar_txt(HashTable* ht, const char* nome_arquivo) {
         if (token) strcpy(reg.estado, token);
 
         inserir(ht, reg);
-
+        LOG_DEBUG("Importando registro: renamaut=%s, fabricante=%s, modelo=%s, categoria=%s, aplicacao=%s, ano=%d, responsavel=%s, status=%s, cidade=%s, estado=%s",
+              reg.renamaut, reg.fabricante, reg.modelo, reg.categoria, reg.aplicacao, reg.ano, reg.responsavel, reg.status, reg.cidade, reg.estado);
         printf("-> %s | %s | %s | %d | %s | %s-%s\n",
                reg.renamaut, reg.modelo, reg.fabricante, reg.ano,
                reg.status, reg.cidade, reg.estado);
+    
     }
 
     fclose(f);
