@@ -6,7 +6,7 @@
 
 int main(void)
 {
-    const char *base_renamaut = "base_dados/base_renamaut.txt";
+    const char *base_renamaut = "base_dados/base_renamaut_le.txt";
     char *base_dados = "base_dados/exemplo_1000.ERMAUF";
     char numero_registro[20];
     MaquinaAutonoma *lista = NULL;

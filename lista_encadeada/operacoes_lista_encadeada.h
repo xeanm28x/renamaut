@@ -64,6 +64,7 @@ MaquinaAutonoma *buscar_categoria(char *categoria, MaquinaAutonoma *lista)
 MaquinaAutonoma *copiar_maquina(MaquinaAutonoma *original)
 {
     MaquinaAutonoma *novo = malloc(sizeof(MaquinaAutonoma));
+
     if (!novo)
         return NULL;
 
