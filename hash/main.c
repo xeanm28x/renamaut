@@ -9,15 +9,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-// #define TAM_TABELA 37
-
-int main(void)
+int main(int argc, char *argv[])
 {
-    fclose(fopen("debug.log", "w"));             
-    fclose(fopen("../tempos_execucao/tabela_hash.log", "w"));  // novo destino do log de tempo
+    fclose(fopen("debug.log", "w"));
+    fclose(fopen("../tempos_execucao/tabela_hash.log", "w"));  // limpa log
 
-    const char *arquivo_txt = "../base_dados/base_renamaut.txt";
-    const char *arquivo_json = "../base_dados/exemplo_5000.ERMAUF";
+    if (argc < 2) {
+        fprintf(stderr, "Uso: %s <arquivo_json>\n", argv[0]);
+        exit(1);  // Corrigido
+    }
+
+    const char *arquivo_json = argv[1];
+    FILE *fp = fopen(arquivo_json, "r");
+    if (!fp) {
+        fprintf(stderr, "Erro: arquivo '%s' não encontrado.\n", arquivo_json);
+        exit(1);  // Corrigido
+    }
+    fclose(fp);
+
+
     char numero_registro[20];
     int op;
 
