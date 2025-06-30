@@ -6,6 +6,7 @@
 
 int main(int argc, char *argv[])
 {
+    fclose(fopen("../tempos_execucao/arvore_rn.log", "w"));
 
     if (argc < 2) {
         fprintf(stderr, "Uso: %s <base_dados>\n", argv[0]);

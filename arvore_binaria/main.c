@@ -4,10 +4,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
+int main(int argc, char *argv[])
 {
+    fclose(fopen("../tempos_execucao/arvore_binaria.log", "w"));
+
     const char *base_renamaut = "base_dados/base_renamaut_ab.txt";
-    char *base_dados = "base_dados/exemplo_1000.ERMAUF";
+
+    if (argc < 2) {
+        fprintf(stderr, "Uso: %s <arquivo_json>\n", argv[0]);
+        exit(1); 
+    }
+
+    const char *base_dados = argv[1];
+    FILE *fp = fopen(base_dados, "r");
+    if (!fp) {
+        fprintf(stderr, "Erro: arquivo '%s' não encontrado.\n", base_dados);
+        exit(1);
+    }
+    fclose(fp);
+
     char numero_registro[20];
     MaquinaAutonoma *arvore = NULL;
     MaquinaAutonoma *aux = NULL;
