@@ -1,8 +1,2 @@
-[main.c:35] Número de registros no JSON: 5000
-[main.c:37] Tamanho estimado da tabela: 7507
-[main.c:55] Buscando registro: 'UGVINSRHTX45509B'
-[operacoes_hash.h:65] Comparando com 'VEITRCKUKA6E6850'
-[operacoes_hash.h:65] Comparando com 'UGVINSRHTX45509B'
-[operacoes_hash.h:67] Chave 'UGVINSRHTX45509B', Responsável '11720946248' 
-[main.c:79] Chamando imprimir para 'UGVINSRHTX45509B'
-[persistencia.h:145] [exportar_para_txt] Exportação concluída para o arquivo '../base_dados/base_renamaut_hash.txt'
+[main.c:35] Número de registros no JSON: 1000
+[main.c:37] Tamanho estimado da tabela: 1511

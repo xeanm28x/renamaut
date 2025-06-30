@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
     fclose(fopen("debug.log", "w"));
-    fclose(fopen("../tempos_execucao/tabela_hash.log", "w"));  // limpa log
+    fclose(fopen("../tempos_execucao/tabela_hash.log", "w")); 
 
     if (argc < 2) {
         fprintf(stderr, "Uso: %s <arquivo_json>\n", argv[0]);
