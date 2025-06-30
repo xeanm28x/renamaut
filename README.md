@@ -50,7 +50,7 @@ Este projeto tem como objetivo realizar o cadastro, a busca e a manipulação de
 
     ```bash
     gcc arvore_avl/main.c -o sistema_avl -lcjson
-    ./sistema_avl
+    ./sistema_avl arquivo.ERMAUF
     ```
 
    > Altere o caminho do `main.c` e dos includes conforme a estrutura que deseja testar (lista, hash, binária, AVL, Rubro-Negra).
