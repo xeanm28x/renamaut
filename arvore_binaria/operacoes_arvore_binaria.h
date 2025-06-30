@@ -54,7 +54,7 @@ MaquinaAutonoma *buscar_numero_registro(const char *numero_registro, MaquinaAuto
     return NULL;
 }
 
-MaquinaAutonoma *buscar_categoria(char *categoria, MaquinaAutonoma *arvore)
+MaquinaAutonoma *buscar_categoria(const char *categoria, MaquinaAutonoma *arvore)
 {
     if (arvore == NULL)
         return NULL;
@@ -62,10 +62,12 @@ MaquinaAutonoma *buscar_categoria(char *categoria, MaquinaAutonoma *arvore)
     if (strcmp(arvore->categoria, categoria) == 0)
         return arvore;
 
-    if (strcmp(arvore->categoria, categoria) < 0)
-        return buscar_categoria(categoria, arvore->esq);
-    else
-        return buscar_categoria(categoria, arvore->dir);
+    MaquinaAutonoma *res = buscar_categoria(categoria, arvore->esq);
+
+    if (res != NULL)
+        return res;
+
+    return buscar_categoria(categoria, arvore->dir);
 }
 
 MaquinaAutonoma *copiar_maquina(MaquinaAutonoma *original)
@@ -305,4 +307,31 @@ void imprimir_linha_relatorio_categoria(EstadoGrupo *grupo_estados)
 
     imprimir_linha_relatorio_categoria(grupo_estados->dir);
 }
+
+void liberar_arvore(MaquinaAutonoma **arvore)
+{
+    if (*arvore == NULL)
+        return;
+
+    liberar_arvore(&((*arvore)->esq));
+    liberar_arvore(&((*arvore)->dir));
+
+    free((*arvore)->renamaut);
+    free((*arvore)->fabricante);
+    free((*arvore)->modelo);
+    free((*arvore)->categoria);
+    free((*arvore)->aplicacao);
+    free((*arvore)->responsavel);
+
+    if ((*arvore)->localizacao)
+    {
+        free((*arvore)->localizacao->cidade);
+        free((*arvore)->localizacao->uf);
+        free((*arvore)->localizacao);
+    }
+
+    free(*arvore);
+    *arvore = NULL;
+}
+
 #endif

@@ -62,5 +62,3 @@ Este projeto tem como objetivo realizar o cadastro, a busca e a manipulação de
 **Observação:**  
 Cada pasta de estrutura possui seu próprio `main.c`, `file_handler.h` e arquivos de operações.  
 Escolha a estrutura desejada para compilar e executar.
-
----
