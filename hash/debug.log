@@ -1,2 +1,8 @@
 [main.c:35] Número de registros no JSON: 1000
 [main.c:37] Tamanho estimado da tabela: 1511
+[main.c:55] Buscando registro: 'SECSGPCSCO7148D8'
+[operacoes_hash.h:64] Comparando com 'EDUEDUSIEM746994'
+[operacoes_hash.h:64] Comparando com 'SECSGPCSCO7148D8'
+[operacoes_hash.h:66] Chave 'SECSGPCSCO7148D8', Responsável '96055449986404' 
+[main.c:79] Chamando imprimir para 'SECSGPCSCO7148D8'
+[persistencia.h:145] [exportar_para_txt] Exportação concluída para o arquivo '../base_dados/base_renamaut_hash.txt'
