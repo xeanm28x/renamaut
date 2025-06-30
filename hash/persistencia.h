@@ -44,13 +44,13 @@ static inline void carregar_tabela(HashTable* ht, const char* nome_arquivo)
 
     Registro temp;
     while (fread(&temp, sizeof(Registro), 1, f) == 1) {
-        printf("-> %s | %s | %s | %d | %s | %s-%s\n",
+        printf("-> %s | %s | %s | %d | %d | %s-%s\n",
             temp.renamaut, temp.modelo, temp.fabricante, temp.ano,
             temp.status, temp.cidade, temp.estado);
 
         Registro novo;
         memcpy(&novo, &temp, sizeof(Registro));
-        printf("Carregando registro: %s\n", novo.renamaut);
+        LOG_DEBUG("Carregando registro: %s", novo.renamaut);
         novo.prox = NULL;
         inserir(ht, novo);
     }
@@ -94,7 +94,7 @@ static inline void importar_txt(HashTable* ht, const char* nome_arquivo) {
         if (token) strcpy(reg.responsavel, token);
 
         token = strtok(NULL, "|");
-        if (token) strcpy(reg.status, strcmp(token, "1") == 0 ? "ativo" : "inativo");
+        if (token) reg.status = atoi(token);  // ← Agora é int
 
         token = strtok(NULL, "|");
         if (token) strcpy(reg.cidade, token);
@@ -103,17 +103,46 @@ static inline void importar_txt(HashTable* ht, const char* nome_arquivo) {
         if (token) strcpy(reg.estado, token);
 
         inserir(ht, reg);
-        LOG_DEBUG("Importando registro: renamaut=%s, fabricante=%s, modelo=%s, categoria=%s, aplicacao=%s, ano=%d, responsavel=%s, status=%s, cidade=%s, estado=%s",
-              reg.renamaut, reg.fabricante, reg.modelo, reg.categoria, reg.aplicacao, reg.ano, reg.responsavel, reg.status, reg.cidade, reg.estado);
-        printf("-> %s | %s | %s | %d | %s | %s-%s\n",
-               reg.renamaut, reg.modelo, reg.fabricante, reg.ano,
-               reg.status, reg.cidade, reg.estado);
-    
+
+        LOG_DEBUG("Importando registro: renamaut=%s, fabricante=%s, modelo=%s, categoria=%s, aplicacao=%s, ano=%d, responsavel=%s, status=%d, cidade=%s, estado=%s",
+            reg.renamaut, reg.fabricante, reg.modelo, reg.categoria, reg.aplicacao, reg.ano, reg.responsavel, reg.status, reg.cidade, reg.estado);
+
+        printf("-> %s | %s | %s | %d | %d | %s-%s\n",
+            reg.renamaut, reg.modelo, reg.fabricante, reg.ano,
+            reg.status, reg.cidade, reg.estado);
     }
 
     fclose(f);
     printf("[importar_txt] Importação concluída.\n");
 }
 
+static inline void exportar_para_txt(HashTable* ht, const char* nome_arquivo) {
+    if (!ht || !nome_arquivo) {
+        LOG_DEBUG("[exportar_para_txt] Tabela ou nome de arquivo inválidos.");
+        return;
+    }
+
+    FILE* f = fopen(nome_arquivo, "w");
+    if (!f) {
+        LOG_DEBUG("[exportar_para_txt] Erro ao abrir arquivo '%s' para escrita.", nome_arquivo);
+        return;
+    }
+
+    for (int i = 0; i < ht->tamanho; i++) {
+        Registro* r = ht->tabela[i];
+        while (r) {
+            int status_num = r->status;
+            fprintf(f, "%s|%s|%s|%s|%s|%d|%s|%d|%s|%s\n",
+                    r->renamaut, r->fabricante, r->modelo,
+                    r->categoria, r->aplicacao, r->ano,
+                    r->responsavel, status_num, r->cidade, r->estado);
+
+            r = r->prox;
+        }
+    }
+
+    fclose(f);
+    LOG_DEBUG("[exportar_para_txt] Exportação concluída para o arquivo '%s'", nome_arquivo);
+}
 
 #endif // PERSISTENCIA_H

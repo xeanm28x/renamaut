@@ -19,7 +19,7 @@ typedef struct Registro {
     char aplicacao[10];
     int ano;
     char responsavel[20];
-    char status[10];  // "ativo" ou "inativo"
+    int status;              // agora 0 (inativo) ou 1 (ativo)
     char cidade[100];
     char estado[3];
     struct Registro* prox;
@@ -73,12 +73,11 @@ static inline Registro* buscar(HashTable* ht, const char* chave) {
     return NULL;
 }
 
-
 // Inativa registro
 static inline int inativar(HashTable* ht, const char* chave) {
     Registro* reg = buscar(ht, chave);
-    if (reg && strcmp(reg->status, "ativo") == 0) {
-        strcpy(reg->status, "inativo");
+    if (reg && reg->status == 1) {
+        reg->status = 0;
         return 1;
     }
     return 0;

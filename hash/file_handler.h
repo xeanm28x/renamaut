@@ -1,59 +1,112 @@
 #include <cjson/cJSON.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "operacoes_hash.h"
 
-// Lê um arquivo ERMAUF (.json) e carrega os registros na tabela hash
-#include <cjson/cJSON.h>
-
-void importar_json(HashTable* ht, const char* nome_arquivo) {
-    FILE* f = fopen(nome_arquivo, "r");
+void importar_json(HashTable *ht, const char *arquivo_json) {
+    FILE *f = fopen(arquivo_json, "r");
     if (!f) {
         perror("Erro ao abrir JSON");
         return;
     }
 
     fseek(f, 0, SEEK_END);
-    long len = ftell(f);
-    fseek(f, 0, SEEK_SET);
-    char* data = malloc(len + 1);
-    fread(data, 1, len, f);
-    data[len] = '\0';
+    long tamanho = ftell(f);
+    rewind(f);
+
+    char *conteudo = malloc(tamanho + 1);
+    fread(conteudo, 1, tamanho, f);
+    conteudo[tamanho] = '\0';
     fclose(f);
 
-    cJSON* root = cJSON_Parse(data);
-    free(data);
+    cJSON *root = cJSON_Parse(conteudo);
+    free(conteudo);
+
     if (!root) {
-        printf("Erro ao parsear JSON.\n");
+        fprintf(stderr, "Erro ao fazer parse do JSON.\n");
         return;
     }
 
-    cJSON* lista = cJSON_GetObjectItem(root, "dados");
-    if (!cJSON_IsArray(lista)) {
-        printf("JSON não contém 'dados' como array.\n");
+    cJSON *dados = cJSON_GetObjectItem(root, "dados");
+    if (!cJSON_IsArray(dados)) {
+        fprintf(stderr, "Campo 'dados' inválido no JSON.\n");
         cJSON_Delete(root);
         return;
     }
 
-    cJSON* item;
-    cJSON_ArrayForEach(item, lista) {
-        Registro reg;
-        memset(&reg, 0, sizeof(Registro));
-
-        strcpy(reg.renamaut, cJSON_GetObjectItem(item, "renamaut")->valuestring);
-        strcpy(reg.fabricante, cJSON_GetObjectItem(item, "fab")->valuestring);
-        strcpy(reg.modelo, cJSON_GetObjectItem(item, "mod")->valuestring);
-        strcpy(reg.categoria, cJSON_GetObjectItem(item, "cat")->valuestring);
-        strcpy(reg.aplicacao, cJSON_GetObjectItem(item, "apl")->valuestring);
-        reg.ano = cJSON_GetObjectItem(item, "ano")->valueint;
-        strcpy(reg.responsavel, cJSON_GetObjectItem(item, "resp")->valuestring);
-        strcpy(reg.status, "ativo");  // por padrão
-
-        cJSON* loc = cJSON_GetObjectItem(item, "loc_base");
-        if (loc) {
-            strcpy(reg.cidade, cJSON_GetObjectItem(loc, "cidade")->valuestring);
-            strcpy(reg.estado, cJSON_GetObjectItem(loc, "uf")->valuestring);
-        }
-        inserir(ht, reg);
+    FILE *out = fopen("../base_dados/base_renamaut_hash.txt", "w");
+    if (!out) {
+        perror("Erro ao criar base_renamaut_hash.txt");
+        cJSON_Delete(root);
+        return;
     }
 
+    cJSON *item = NULL;
+    cJSON_ArrayForEach(item, dados) {
+        Registro r = {0};
+
+        strcpy(r.renamaut, cJSON_GetObjectItem(item, "renamaut")->valuestring);
+        strcpy(r.fabricante, cJSON_GetObjectItem(item, "fab")->valuestring);
+        strcpy(r.modelo, cJSON_GetObjectItem(item, "mod")->valuestring);
+        strcpy(r.categoria, cJSON_GetObjectItem(item, "cat")->valuestring);
+        strcpy(r.aplicacao, cJSON_GetObjectItem(item, "apl")->valuestring);
+
+        cJSON *anoItem = cJSON_GetObjectItem(item, "ano");
+        r.ano = (cJSON_IsNumber(anoItem)) ? anoItem->valueint : 0;
+
+        strcpy(r.responsavel, cJSON_GetObjectItem(item, "resp")->valuestring);
+
+        cJSON *statusItem = cJSON_GetObjectItem(item, "status");
+        r.status = (cJSON_IsNumber(statusItem)) ? statusItem->valueint : 1; // padrão: ativo
+
+        cJSON *loc_base = cJSON_GetObjectItem(item, "loc_base");
+        if (loc_base) {
+            strcpy(r.cidade, cJSON_GetObjectItem(loc_base, "cidade")->valuestring);
+            strcpy(r.estado, cJSON_GetObjectItem(loc_base, "uf")->valuestring);
+        }
+
+        r.prox = NULL;
+        inserir(ht, r);
+
+        fprintf(out, "%s|%s|%s|%s|%s|%d|%s|%d|%s|%s\n",
+                r.renamaut, r.fabricante, r.modelo,
+                r.categoria, r.aplicacao, r.ano,
+                r.responsavel, r.status, r.cidade, r.estado);
+    }
+
+    fclose(out);
     cJSON_Delete(root);
+}
+
+
+int contar_registros_json(const char *arquivo_json) {
+    FILE *f = fopen(arquivo_json, "r");
+    if (!f) {
+        perror("Erro ao abrir JSON");
+        return 0;
+    }
+
+    fseek(f, 0, SEEK_END);
+    long tamanho = ftell(f);
+    rewind(f);
+
+    char *conteudo = malloc(tamanho + 1);
+    fread(conteudo, 1, tamanho, f);
+    conteudo[tamanho] = '\0';
+    fclose(f);
+
+    cJSON *root = cJSON_Parse(conteudo);
+    free(conteudo);
+
+    if (!root) {
+        free(conteudo);
+        return 0;
+    }
+
+    cJSON *dados = cJSON_GetObjectItem(root, "dados");
+    int qtd = cJSON_GetArraySize(dados);
+
+    cJSON_Delete(root);
+    return qtd;
 }
