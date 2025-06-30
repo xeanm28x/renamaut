@@ -16,14 +16,14 @@ int main(int argc, char *argv[])
 
     if (argc < 2) {
         fprintf(stderr, "Uso: %s <arquivo_json>\n", argv[0]);
-        exit(1);  // Corrigido
+        exit(1); 
     }
 
     const char *arquivo_json = argv[1];
     FILE *fp = fopen(arquivo_json, "r");
     if (!fp) {
         fprintf(stderr, "Erro: arquivo '%s' não encontrado.\n", arquivo_json);
-        exit(1);  // Corrigido
+        exit(1);  
     }
     fclose(fp);
 
@@ -38,10 +38,10 @@ int main(int argc, char *argv[])
 
     HashTable *tabela = criar_tabela(tamanho_tabela);
 
-    clock_t ini_json = clock();
+    clock_t ini_json = clock(); /*inicia o contador*/
     importar_json(tabela, arquivo_json);
-    clock_t fim_json = clock();
-    medir_tempo(ini_json, fim_json, "Importação JSON", "../tempos_execucao/tabela_hash.log");
+    clock_t fim_json = clock();/*finaliza o contator*/
+    medir_tempo(ini_json, fim_json, "Importação JSON", "../tempos_execucao/tabela_hash.log");/*exporta para o segundo parametro que eh o caminho*/
 
     do {
         op = main_menu();
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
                 if (validate_renamaut(numero_registro) == 0) {
                     clock_t fim = clock();
-                    medir_tempo(ini, fim, "Validação RENAMAUT", "../tempos_execucao/tabela_hash.log");
+                    medir_tempo(ini, fim, "Validação RENAMAUT", "../tempos_execucao/tabela_hash.log");/*exporta para o segundo parametro que eh o caminho*/
                     wait_enter("\nNúmero de registro inválido.");
                     break;
                 }
@@ -72,10 +72,10 @@ int main(int argc, char *argv[])
                 clock_t fim = clock();
 
                 if (reg == NULL) {
-                    medir_tempo(ini, fim, "Busca RENAMAUT (sem sucesso)", "../tempos_execucao/tabela_hash.log");
+                    medir_tempo(ini, fim, "Busca RENAMAUT (sem sucesso)", "../tempos_execucao/tabela_hash.log");/*exporta para o segundo parametro que eh o caminho*/
                     wait_enter("\nMáquina Autônoma não encontrada.");
                 } else {
-                    medir_tempo(ini, fim, "Busca RENAMAUT (sucesso)", "../tempos_execucao/tabela_hash.log");
+                    medir_tempo(ini, fim, "Busca RENAMAUT (sucesso)", "../tempos_execucao/tabela_hash.log");/*exporta para o segundo parametro que eh o caminho*/
                     LOG_DEBUG("Chamando imprimir para '%s'", reg->renamaut);
                     imprimir(reg);
                     wait_enter("\nPressione Enter para continuar...");
@@ -103,11 +103,11 @@ int main(int argc, char *argv[])
 
                 if (reg == NULL) {
                     clock_t fim = clock();
-                    medir_tempo(ini, fim, "Inativação - Registro não encontrado", "../tempos_execucao/tabela_hash.log");
+                    medir_tempo(ini, fim, "Inativação - Registro não encontrado", "../tempos_execucao/tabela_hash.log"); /*o ultimo pametro eh onde coloca o registro de tempo*/
                     wait_enter("\nMáquina Autônoma não encontrada.");
                 } else if (reg->status == 0) {
                     clock_t fim = clock();
-                    medir_tempo(ini, fim, "Inativação - Já inativa", "../tempos_execucao/tabela_hash.log");
+                    medir_tempo(ini, fim, "Inativação - Já inativa", "../tempos_execucao/tabela_hash.log");/*exporta para o segundo parametro que eh o caminho*/
                     wait_enter("\nA Máquina informada já está inativa.");
                 } else {
                     char mensagem[256];
@@ -115,11 +115,11 @@ int main(int argc, char *argv[])
                     if (wait_confirmation(mensagem)) {
                         reg->status = 0;
                         clock_t fim = clock();
-                        medir_tempo(ini, fim, "Inativação realizada", "../tempos_execucao/tabela_hash.log");
+                        medir_tempo(ini, fim, "Inativação realizada", "../tempos_execucao/tabela_hash.log");/*exporta para o segundo parametro que eh o caminho*/
                         wait_enter("\nMáquina inativada com sucesso!");
                     } else {
                         clock_t fim = clock();
-                        medir_tempo(ini, fim, "Inativação cancelada", "../tempos_execucao/tabela_hash.log");
+                        medir_tempo(ini, fim, "Inativação cancelada", "../tempos_execucao/tabela_hash.log"); /*exporta para o segundo parametro que eh o caminho*/
                         wait_enter("\nCancelando...");
                     }
                 }
@@ -144,7 +144,7 @@ int main(int argc, char *argv[])
             clock_t ini = clock();
             relatorio_responsavel(tabela, responsavel);
             clock_t fim = clock();
-            medir_tempo(ini, fim, "Relatório por Responsável", "../tempos_execucao/tabela_hash.log");
+            medir_tempo(ini, fim, "Relatório por Responsável", "../tempos_execucao/tabela_hash.log"); /*exporta para o segundo parametro que eh o caminho*/
 
             wait_enter("\nPressione Enter para continuar...");
         }
@@ -159,14 +159,14 @@ int main(int argc, char *argv[])
             clock_t ini = clock();
             relatorio_categoria(tabela, cat);
             clock_t fim = clock();
-            medir_tempo(ini, fim, "Relatório por Categoria", "../tempos_execucao/tabela_hash.log");
+            medir_tempo(ini, fim, "Relatório por Categoria", "../tempos_execucao/tabela_hash.log"); /*exporta para o segundo parametro que eh o caminho*/
 
             wait_enter("\nPressione Enter para continuar...");
         }
         break;
 
         case EXIT_SYSTEM:
-            exportar_para_txt(tabela, "../base_dados/base_renamaut_hash.txt");
+            exportar_para_txt(tabela, "../base_dados/base_renamaut_hash.txt"); /*exporta para o segundo parametro que eh o caminho*/
             liberar_tabela(tabela);
             break;
         }

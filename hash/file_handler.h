@@ -58,7 +58,7 @@ void importar_json(HashTable *ht, const char *arquivo_json) {
         strcpy(r.responsavel, cJSON_GetObjectItem(item, "resp")->valuestring);
 
         cJSON *statusItem = cJSON_GetObjectItem(item, "status");
-        r.status = (cJSON_IsNumber(statusItem)) ? statusItem->valueint : 1; // padrão: ativo
+        r.status = (cJSON_IsNumber(statusItem)) ? statusItem->valueint : 1; /*Como padrao e o ativo*/
 
         cJSON *loc_base = cJSON_GetObjectItem(item, "loc_base");
         if (loc_base) {

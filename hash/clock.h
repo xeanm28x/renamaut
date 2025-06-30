@@ -1,7 +1,7 @@
 #include <time.h>
 #include <stdio.h>
 
-static inline double medir_tempo(clock_t inicio, clock_t fim, const char* operacao) {
+double medir_tempo(clock_t inicio, clock_t fim, const char* operacao) {
     double tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
     // Exibe no terminal

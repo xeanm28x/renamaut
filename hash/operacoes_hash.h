@@ -8,9 +8,8 @@
 #include "log.h"
 
 #define MAX_MODELO 50
-#define TAM_CHAVE 17  // incluindo '\0' para "XXX-XXX-XXXX-XXXXXX"
+#define TAM_CHAVE 17  /* incluindo \0 quando tem XXX-XXX-XXXX-XXXXXX */
 
-// Struct para registro da máquina
 typedef struct Registro {
     char renamaut[20];
     char fabricante[20];
@@ -19,20 +18,20 @@ typedef struct Registro {
     char aplicacao[10];
     int ano;
     char responsavel[20];
-    int status;              // agora 0 (inativo) ou 1 (ativo)
+    int status;              /*0 para inativo e 1 para ativo*/
     char cidade[100];
     char estado[3];
     struct Registro* prox;
 } Registro;
 
-// Tabela hash com encadeamento externo
+/*Tabela hash com encadeamento externo*/
 typedef struct {
     int tamanho;
     Registro** tabela;
 } HashTable;
 
-// Função hash
-static inline int funcao_hash(const char* chave, int tamanho) {
+/*Função hash djb2*/
+int funcao_hash(const char* chave, int tamanho) {
     unsigned long hash = 0;
     for (int i = 0; chave[i] != '\0'; i++) {
         hash = (hash * 31 + chave[i]) % tamanho;
@@ -40,16 +39,16 @@ static inline int funcao_hash(const char* chave, int tamanho) {
     return hash;
 }
 
-// Inicializa tabela
-static inline HashTable* criar_tabela(int tamanho) {
+
+HashTable* criar_tabela(int tamanho) {
     HashTable* ht = malloc(sizeof(HashTable));
     ht->tamanho = tamanho;
     ht->tabela = calloc(tamanho, sizeof(Registro*));
     return ht;
 }
 
-// Insere na tabela
-static inline void inserir(HashTable* ht, Registro reg) {
+
+void inserir(HashTable* ht, Registro reg) {
     int idx = funcao_hash(reg.renamaut, ht->tamanho);
     Registro* novo = malloc(sizeof(Registro));
     *novo = reg;
@@ -57,8 +56,8 @@ static inline void inserir(HashTable* ht, Registro reg) {
     ht->tabela[idx] = novo;
 }
 
-// Busca por RENAMAUT
-static inline Registro* buscar(HashTable* ht, const char* chave) {
+
+Registro* buscar(HashTable* ht, const char* chave) {
     int idx = funcao_hash(chave, ht->tamanho);
     Registro* atual = ht->tabela[idx];
     while (atual) {
@@ -73,8 +72,7 @@ static inline Registro* buscar(HashTable* ht, const char* chave) {
     return NULL;
 }
 
-// Inativa registro
-static inline int inativar(HashTable* ht, const char* chave) {
+int inativar(HashTable* ht, const char* chave) {
     Registro* reg = buscar(ht, chave);
     if (reg && reg->status == 1) {
         reg->status = 0;
@@ -83,8 +81,7 @@ static inline int inativar(HashTable* ht, const char* chave) {
     return 0;
 }
 
-// Libera tabela
-static inline void liberar_tabela(HashTable* ht) {
+void liberar_tabela(HashTable* ht) {
     for (int i = 0; i < ht->tamanho; i++) {
         Registro* atual = ht->tabela[i];
         while (atual) {
@@ -97,8 +94,7 @@ static inline void liberar_tabela(HashTable* ht) {
     free(ht);
 }
 
-// Estimar tamanho ideal da tabela
-static inline int estimar_tamanho_tabela(int n) {
+int estimar_tamanho_tabela(int n) {
     int m = (int)(1.5 * n);
     while (1) {
         int primo = 1;
@@ -113,4 +109,4 @@ static inline int estimar_tamanho_tabela(int n) {
     }
 }
 
-#endif // OPERACOES_HASH_H
+#endif

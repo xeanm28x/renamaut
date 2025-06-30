@@ -8,8 +8,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Salva todos os registros da tabela de dispersão em um arquivo binário
-static inline void salvar_tabela(HashTable* ht, const char* nome_arquivo)
+/* salva os dados todos registros em um arquivo*/
+void salvar_tabela(HashTable* ht, const char* nome_arquivo)
 {
     FILE* f = fopen(nome_arquivo, "wb");
     if (!f) {
@@ -28,8 +28,8 @@ static inline void salvar_tabela(HashTable* ht, const char* nome_arquivo)
     fclose(f);
 }
 
-// Carrega os registros de um arquivo binário para a tabela de dispersão
-static inline void carregar_tabela(HashTable* ht, const char* nome_arquivo)
+/*feito a carga de registros de um arquivo binario para a tabela*/
+void carregar_tabela(HashTable* ht, const char* nome_arquivo)
 {
     printf("Carregando registros do arquivo: %s\n", nome_arquivo);
     if (!ht || !nome_arquivo) {
@@ -38,7 +38,7 @@ static inline void carregar_tabela(HashTable* ht, const char* nome_arquivo)
     }
     FILE* f = fopen(nome_arquivo, "rb");
     if (!f) {
-        // Pode não existir na primeira execução
+        /*nao existe na primeira execucao*/
         return;
     }
 
@@ -58,7 +58,7 @@ static inline void carregar_tabela(HashTable* ht, const char* nome_arquivo)
     fclose(f);
 }
 
-static inline void importar_txt(HashTable* ht, const char* nome_arquivo) {
+void importar_txt(HashTable* ht, const char* nome_arquivo) {
     FILE* f = fopen(nome_arquivo, "r");
     if (!f) {
         perror("[importar_txt] Erro ao abrir arquivo");
@@ -116,7 +116,7 @@ static inline void importar_txt(HashTable* ht, const char* nome_arquivo) {
     printf("[importar_txt] Importação concluída.\n");
 }
 
-static inline void exportar_para_txt(HashTable* ht, const char* nome_arquivo) {
+void exportar_para_txt(HashTable* ht, const char* nome_arquivo) {
     if (!ht || !nome_arquivo) {
         LOG_DEBUG("[exportar_para_txt] Tabela ou nome de arquivo inválidos.");
         return;
@@ -145,4 +145,4 @@ static inline void exportar_para_txt(HashTable* ht, const char* nome_arquivo) {
     LOG_DEBUG("[exportar_para_txt] Exportação concluída para o arquivo '%s'", nome_arquivo);
 }
 
-#endif // PERSISTENCIA_H
+#endif
