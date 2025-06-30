@@ -222,7 +222,7 @@ void imprimir(MaquinaAutonoma *celula)
     char mensagem[512];
 
     const char *numero_registro = celula->renamaut;
-    char f_numero_registro[20];
+    char f_numero_registro[20] = {0};
     const char *fabricante = get_manufacturer_name_by_id(celula->fabricante);
     const char *categoria = get_category_name_by_code(celula->categoria);
     const char *aplicacao = get_application_description_by_code(celula->aplicacao);

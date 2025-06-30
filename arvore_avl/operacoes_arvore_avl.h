@@ -291,7 +291,7 @@ void imprimir(MaquinaAutonoma *celula)
     char mensagem[512];
 
     const char *numero_registro = celula->renamaut;
-    char f_numero_registro[17];
+    char f_numero_registro[20] = {0};
     const char *fabricante = get_manufacturer_name_by_id(celula->fabricante);
     const char *categoria = get_category_name_by_code(celula->categoria);
     const char *aplicacao = get_application_description_by_code(celula->aplicacao);
@@ -300,7 +300,7 @@ void imprimir(MaquinaAutonoma *celula)
     const char *cidade = (celula->localizacao && celula->localizacao->cidade) ? celula->localizacao->cidade : "Não informado.";
     char f_responsavel[15];
 
-    apply_mask_renamaut(numero_registro, f_numero_registro);
+    apply_mask_renamaut(celula->renamaut, f_numero_registro);
 
     if (strlen(responsavel) < 14)
         apply_mask_cpf(responsavel, f_responsavel);
@@ -319,7 +319,7 @@ void imprimir(MaquinaAutonoma *celula)
         "Status: %s\n"
         "Cidade: %s\n"
         "Estado: %s\n",
-        f_numero_registro,
+        celula->renamaut,
         fabricante,
         celula->modelo,
         categoria,

@@ -301,7 +301,7 @@ void imprimir(MaquinaAutonoma *celula)
         "Status: %s\n"
         "Cidade: %s\n"
         "Estado: %s\n",
-        f_numero_registro,
+        celula->renamaut,
         fabricante,
         celula->modelo,
         categoria,
