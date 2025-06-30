@@ -36,20 +36,22 @@ int main(void)
                     ;
             }
 
-            const char *nr1 = numero_registro;
+            char registro_limpo[20];
 
-            if (strchr(numero_registro, '-') != NULL)
+            strcpy(registro_limpo, numero_registro);
+
+            if (strchr(registro_limpo, '-') != NULL)
             {
-                remove_mask(nr1, numero_registro);
+                remove_mask(registro_limpo, numero_registro);
             }
 
-            if (validate_renamaut(numero_registro) == 0)
+            if (validate_renamaut(registro_limpo) == 0)
             {
                 wait_enter("\nNúmero de registro inválido.");
                 break;
             }
 
-            aux = buscar_numero_registro(nr1, arvore);
+            aux = buscar_numero_registro(registro_limpo, arvore);
 
             if (aux == NULL)
             {
