@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-static inline void imprimir(const Registro* reg) {
+void imprimir(const Registro* reg) {
     printf("\n===== Registro RENAMAUT =====\n");
     printf("Número: %s\n", reg->renamaut);
     printf("Modelo: %s\n", reg->modelo);
@@ -21,7 +21,7 @@ static inline void imprimir(const Registro* reg) {
     printf("=============================\n");
 }
 
-static inline void relatorio_responsavel(HashTable* ht, const char* doc) {
+void relatorio_responsavel(HashTable* ht, const char* doc) {
     int encontrou_ativa = 0, encontrou_inativa = 0;
 
     printf("\nMáquinas ATIVAS:\n");
@@ -67,7 +67,7 @@ static inline void relatorio_responsavel(HashTable* ht, const char* doc) {
     LOG_DEBUG("===========");
 }
 
-static inline void relatorio_categoria(HashTable* ht, const char* categoria) {
+void relatorio_categoria(HashTable* ht, const char* categoria) {
     char estados_visitados[27 * 27][3];
     int total_estados = 0;
 
