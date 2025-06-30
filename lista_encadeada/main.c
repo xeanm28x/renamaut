@@ -3,12 +3,14 @@
 #include "operacoes_lista_encadeada.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 int main(void)
 {
     const char *base_renamaut = "base_dados/base_renamaut_le.txt";
     char *base_dados = "base_dados/exemplo_1000.ERMAUF";
+
     char numero_registro[20];
+
     MaquinaAutonoma *lista = NULL;
     MaquinaAutonoma *aux = NULL;
     int op;
