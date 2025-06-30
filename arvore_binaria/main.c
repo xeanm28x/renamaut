@@ -232,6 +232,12 @@ int main(void)
             }
 
             break;
+
+        case EXIT_SYSTEM:
+            aux = NULL;
+            gravar(base_renamaut, arvore);
+            liberar_arvore(&arvore);
+            break;
         }
     } while (op != EXIT_SYSTEM);
 
