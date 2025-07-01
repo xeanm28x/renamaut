@@ -4,10 +4,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int main(void)
+
+int main(int argc, char *argv[])
 {
     const char *base_renamaut = "base_dados/base_renamaut_le.txt";
-    char *base_dados = "base_dados/exemplo_1000.ERMAUF";
+    char base_dados[256];
+
+    if (argc > 1)
+    {
+        strncpy(base_dados, argv[1], sizeof(base_dados));
+        base_dados[sizeof(base_dados) - 1] = '\0';
+    }
+    else
+    {
+        strcpy(base_dados, "base_dados/exemplo_1000.ERMAUF");
+    }
 
     char numero_registro[20];
 

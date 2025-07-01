@@ -6,21 +6,19 @@
 
 int main(int argc, char *argv[])
 {
-
-    if (argc < 2) {
-        fprintf(stderr, "Uso: %s <base_dados>\n", argv[0]);
-        exit(1); 
-    }
-
-    const char *base_dados =  argv[1];
-
-    FILE *fp = fopen(base_dados, "r");
-    if (!fp) {
-        fprintf(stderr, "Erro: arquivo '%s' não encontrado.\n", base_dados);
-        exit(1);  
-    }
-
     const char *base_renamaut = "base_dados/base_renamaut_rn.txt";
+    char base_dados[256];
+
+    if (argc > 1)
+    {
+        strncpy(base_dados, argv[1], sizeof(base_dados));
+        base_dados[sizeof(base_dados) - 1] = '\0';
+    }
+    else
+    {
+        strcpy(base_dados, "base_dados/exemplo_1000.ERMAUF");
+    }
+
     char numero_registro[20];
     MaquinaAutonoma *arvore = NULL;
     MaquinaAutonoma *aux = NULL;
