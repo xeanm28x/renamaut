@@ -10,20 +10,6 @@ int main(int argc, char *argv[])
 {
     fclose(fopen("../tempos_execucao/arvore_avl.log", "w")); 
 
-    if (argc < 2) {
-        fprintf(stderr, "Uso: %s <base_dados>\n", argv[0]);
-        exit(1); 
-    }
-
-    const char *base_dados =  argv[1];
-
-    FILE *fp = fopen(base_dados, "r");
-    if (!fp) {
-        fprintf(stderr, "Erro: arquivo '%s' não encontrado.\n", base_dados);
-        exit(1);  
-    }
-    fclose(fp);
-
     const char *base_renamaut = "base_dados/base_renamaut_avl.txt";
     char base_dados[256];
 
