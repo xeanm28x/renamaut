@@ -1,4 +1,4 @@
-[main.c:35] Número de registros no JSON: 5000
-[main.c:37] Tamanho estimado da tabela: 7507
-[operacoes_hash.h:64] Comparando com 'EDUTOUHPXX978842'
-[operacoes_hash.h:66] Chave 'EDUTOUHPXX978842', Responsável '52105805710' 
+[main.c:44] Número de registros no TXT: 11000
+[main.c:45] Número de registros no JSON: 5000
+[main.c:48] Número de registros total: 16000
+[main.c:50] Tamanho estimado da tabela: 24001

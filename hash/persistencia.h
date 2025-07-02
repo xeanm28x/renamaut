@@ -2,6 +2,7 @@
 #define PERSISTENCIA_H
 
 #include "operacoes_hash.h"
+#include "../gov_dev/gov_dev.h"
 #include "log.h"
 
 #include <stdio.h>
@@ -102,10 +103,11 @@ void importar_txt(HashTable* ht, const char* nome_arquivo) {
         token = strtok(NULL, "|\n");
         if (token) strcpy(reg.estado, token);
 
+        remove_mask(reg.renamaut, reg.renamaut);
         inserir(ht, reg);
 
-        LOG_DEBUG("Importando registro: renamaut=%s, fabricante=%s, modelo=%s, categoria=%s, aplicacao=%s, ano=%d, responsavel=%s, status=%d, cidade=%s, estado=%s",
-            reg.renamaut, reg.fabricante, reg.modelo, reg.categoria, reg.aplicacao, reg.ano, reg.responsavel, reg.status, reg.cidade, reg.estado);
+        // LOG_DEBUG("Importando registro: renamaut=%s, fabricante=%s, modelo=%s, categoria=%s, aplicacao=%s, ano=%d, responsavel=%s, status=%d, cidade=%s, estado=%s",
+        //     reg.renamaut, reg.fabricante, reg.modelo, reg.categoria, reg.aplicacao, reg.ano, reg.responsavel, reg.status, reg.cidade, reg.estado);
 
         printf("-> %s | %s | %s | %d | %d | %s-%s\n",
             reg.renamaut, reg.modelo, reg.fabricante, reg.ano,
@@ -114,6 +116,21 @@ void importar_txt(HashTable* ht, const char* nome_arquivo) {
 
     fclose(f);
     printf("[importar_txt] Importação concluída.\n");
+}
+
+int contar_registros_txt(const char *arquivo) {
+    FILE *fp = fopen(arquivo, "r");
+    if (!fp) return 0;
+
+    int count = 0;
+    char linha[512];
+    while (fgets(linha, sizeof(linha), fp)) {
+        if (strlen(linha) > 1)
+            count++;
+    }
+
+    fclose(fp);
+    return count;
 }
 
 void exportar_para_txt(HashTable* ht, const char* nome_arquivo) {

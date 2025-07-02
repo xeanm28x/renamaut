@@ -14,15 +14,23 @@ int main(int argc, char *argv[])
     fclose(fopen("debug.log", "w"));
     fclose(fopen("../tempos_execucao/tabela_hash.log", "w")); 
 
-    if (argc < 2) {
-        fprintf(stderr, "Uso: %s <arquivo_json>\n", argv[0]);
-        exit(1); 
+    const char *base_renamaut = "../base_dados/base_renamaut_hash.txt";
+    char base_dados[256];
+
+    if (argc > 1)
+    {
+        strncpy(base_dados, argv[1], sizeof(base_dados));
+        base_dados[sizeof(base_dados) - 1] = '\0';
+    }
+    else
+    {
+        strcpy(base_dados, "../base_dados/exemplo_1000.ERMAUF");
     }
 
-    const char *arquivo_json = argv[1];
-    FILE *fp = fopen(arquivo_json, "r");
+    FILE *fp = fopen(base_dados, "r");
+
     if (!fp) {
-        fprintf(stderr, "Erro: arquivo '%s' não encontrado.\n", arquivo_json);
+        fprintf(stderr, "Erro: arquivo '%s' não encontrado.\n", base_dados);
         exit(1);  
     }
     fclose(fp);
@@ -31,17 +39,24 @@ int main(int argc, char *argv[])
     char numero_registro[20];
     int op;
 
-    int n_elementos = contar_registros_json(arquivo_json);
-    LOG_DEBUG("Número de registros no JSON: %d", n_elementos);
+    int registros_txt = contar_registros_txt(base_renamaut);
+    int registros_json = contar_registros_json(base_dados);
+    LOG_DEBUG("Número de registros no TXT: %d", registros_txt);
+    LOG_DEBUG("Número de registros no JSON: %d", registros_json);
+    int n_elementos = registros_json + registros_txt;
+
+    LOG_DEBUG("Número de registros total: %d", n_elementos);
     int tamanho_tabela = estimar_tamanho_tabela(n_elementos);
     LOG_DEBUG("Tamanho estimado da tabela: %d", tamanho_tabela);
 
     HashTable *tabela = criar_tabela(tamanho_tabela);
 
-    clock_t ini_json = clock(); /*inicia o contador*/
-    importar_json(tabela, arquivo_json);
-    clock_t fim_json = clock();/*finaliza o contator*/
-    medir_tempo(ini_json, fim_json, "Importação JSON", "../tempos_execucao/tabela_hash.log");/*exporta para o segundo parametro que eh o caminho*/
+    clock_t ini_import = clock(); /*inicia o contador*/
+    importar_json(tabela, base_dados);
+    importar_txt(tabela, base_renamaut); /*importa os dados do arquivo txt*/
+    
+    clock_t fim_import = clock();/*finaliza o contator*/
+    medir_tempo(ini_import, fim_import, "Importação JSON", "../tempos_execucao/tabela_hash.log");/*exporta para o segundo parametro que eh o caminho*/
 
     do {
         op = main_menu();
