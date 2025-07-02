@@ -9,14 +9,18 @@
 
 void imprimir(const Registro* reg) {
     char buffer[1024];
-    char f_responsavel[15];
+    char f_responsavel[20] = "Inválido";
+    char f_renamaut[20];
 
+    apply_mask_renamaut(reg->renamaut, f_renamaut);
 
-    if(strlen(reg->responsavel) < 14) {
+    if (validate_cpf(reg->responsavel)) {
         apply_mask_cpf(reg->responsavel, f_responsavel);
-    } else {
+    } else if (validate_cnpj(reg->responsavel)) {
         apply_mask_cnpj(reg->responsavel, f_responsavel);
     }
+
+    LOG_DEBUG("Imprimindo registro: renamaut=%s, responsavel=%s", f_renamaut, f_responsavel);
 
     snprintf(buffer, sizeof(buffer),
          "Número de Registro: %s\n"
@@ -29,7 +33,7 @@ void imprimir(const Registro* reg) {
          "Status: %s\n"
          "Cidade: %s\n"
          "Estado: %s\n",
-         reg->renamaut,
+         f_renamaut,
          get_manufacturer_name_by_id(reg->fabricante),
          reg->modelo,
          get_category_name_by_code(reg->categoria),
@@ -42,6 +46,7 @@ void imprimir(const Registro* reg) {
     );
     printf("%s", buffer);
 }
+
 
 void relatorio_responsavel(HashTable* ht, const char* doc) {
     int encontrou_ativa = 0, encontrou_inativa = 0;

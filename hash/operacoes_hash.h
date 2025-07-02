@@ -6,6 +6,7 @@
 #include <string.h>
 #include <time.h>
 #include "log.h"
+#include "../gov_dev/gov_dev.h"
 
 #define MAX_MODELO 50
 #define TAM_CHAVE 17  /* incluindo \0 quando tem XXX-XXX-XXXX-XXXXXX */
@@ -47,8 +48,31 @@ HashTable* criar_tabela(int tamanho) {
     return ht;
 }
 
+Registro* buscar(HashTable* ht, const char* chave) {
+    int idx = funcao_hash(chave, ht->tamanho);
+    Registro* atual = ht->tabela[idx];
+    while (atual) {
+        // LOG_DEBUG("Comparando com '%s'", atual->renamaut);
+        if (strcmp(atual->renamaut, chave) == 0){
+            // LOG_DEBUG("Chave '%s', Responsável '%s' ", atual->renamaut, atual->responsavel);
+            return atual;
+        }
+        atual = atual->prox;
+    }
+    return NULL;
+}
 
 void inserir(HashTable* ht, Registro reg) {
+    char chave_normalizada[20];
+    remove_mask(reg.renamaut, chave_normalizada);  // Remove a máscara (ex: hífens)
+    // LOG_DEBUG("Inserindo registro: '%s'", chave_normalizada);
+    if (buscar(ht, chave_normalizada) != NULL) {
+        // LOG_DEBUG("Registro com chave '%s' já existe.", chave_normalizada);
+        return; // Já existe
+    }
+
+    strcpy(reg.renamaut, chave_normalizada); // Armazena SEM máscara
+
     int idx = funcao_hash(reg.renamaut, ht->tamanho);
     Registro* novo = malloc(sizeof(Registro));
     *novo = reg;
@@ -56,21 +80,6 @@ void inserir(HashTable* ht, Registro reg) {
     ht->tabela[idx] = novo;
 }
 
-
-Registro* buscar(HashTable* ht, const char* chave) {
-    int idx = funcao_hash(chave, ht->tamanho);
-    Registro* atual = ht->tabela[idx];
-    while (atual) {
-        LOG_DEBUG("Comparando com '%s'", atual->renamaut);
-        if (strcmp(atual->renamaut, chave) == 0){
-            LOG_DEBUG("Chave '%s', Responsável '%s' ", atual->renamaut, atual->responsavel);
-            return atual;
-        }
-        atual = atual->prox;
-    }
-    LOG_DEBUG("Chave '%s' não encontrada", chave);
-    return NULL;
-}
 
 int inativar(HashTable* ht, const char* chave) {
     Registro* reg = buscar(ht, chave);
@@ -95,8 +104,10 @@ void liberar_tabela(HashTable* ht) {
 }
 
 int estimar_tamanho_tabela(int n) {
+    int limite_max = 150001;
     int m = (int)(1.5 * n);
-    while (1) {
+    if (m > limite_max) m = limite_max;
+    while (m <= limite_max) {
         int primo = 1;
         for (int i = 2; i * i <= m; i++) {
             if (m % i == 0) {
@@ -107,6 +118,8 @@ int estimar_tamanho_tabela(int n) {
         if (primo) return m;
         m++;
     }
+    // Se não encontrar primo até o limite, retorna o próprio limite
+    return limite_max;
 }
 
 #endif
