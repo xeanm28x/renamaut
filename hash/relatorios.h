@@ -8,17 +8,39 @@
 #include <string.h>
 
 void imprimir(const Registro* reg) {
-    printf("\n===== Registro RENAMAUT =====\n");
-    printf("Número: %s\n", reg->renamaut);
-    printf("Modelo: %s\n", reg->modelo);
-    printf("Fabricante: %s\n", reg->fabricante);
-    printf("Ano: %d\n", reg->ano);
-    printf("Responsável: %s\n", reg->responsavel);
-    printf("Categoria: %s\n", reg->categoria);
-    printf("Aplicação: %s\n", reg->aplicacao);
-    printf("Status: %s\n", reg->status == 1 ? "ativo" : "inativo");
-    printf("Localização: %s - %s\n", reg->cidade, reg->estado);
-    printf("=============================\n");
+    char buffer[1024];
+    char f_responsavel[15];
+
+
+    if(strlen(reg->responsavel) < 14) {
+        apply_mask_cpf(reg->responsavel, f_responsavel);
+    } else {
+        apply_mask_cnpj(reg->responsavel, f_responsavel);
+    }
+
+    snprintf(buffer, sizeof(buffer),
+         "Número de Registro: %s\n"
+         "Fabricante: %s\n"
+         "Modelo: %s\n"
+         "Categoria: %s\n"
+         "Aplicacao: %s\n"
+         "Ano de Fabricação: %d\n"
+         "Responsável: %s\n"
+         "Status: %s\n"
+         "Cidade: %s\n"
+         "Estado: %s\n",
+         reg->renamaut,
+         get_manufacturer_name_by_id(reg->fabricante),
+         reg->modelo,
+         get_category_name_by_code(reg->categoria),
+         get_application_description_by_code(reg->aplicacao),
+         reg->ano,
+         f_responsavel,
+         reg->status == 1 ? "Ativo" : "Inativo",
+         reg->cidade,
+         get_state_name_by_abbr(reg->estado)
+    );
+    printf("%s", buffer);
 }
 
 void relatorio_responsavel(HashTable* ht, const char* doc) {
@@ -29,7 +51,7 @@ void relatorio_responsavel(HashTable* ht, const char* doc) {
         Registro* r = ht->tabela[i];
         while (r) {
             LOG_DEBUG("Verificando registro: responsavel=%s, status=%s",
-                      r->responsavel, r->status == 1 ? "ativo" : "inativo");
+                      r->responsavel, r->status == 1 ? "Ativo" : "Inativo");
 
             if (strcmp(r->responsavel, doc) == 0 && r->status == 1) {
                 printf("%s;%s;%s;%d;%s;%s-%s\n",

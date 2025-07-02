@@ -8,7 +8,7 @@ static inline double medir_tempo(clock_t inicio, clock_t fim, const char* operac
     double tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
     // Exibe no terminal
-    printf("[Tempo %s] %.6f segundos\n", operacao, tempo);
+    // printf("[Tempo %s] %.6f segundos\n", operacao, tempo);
 
     // Grava no arquivo de log específico da estrutura (ex: tempo_hash.log, tempo_arvore.log)
     FILE* log = fopen(nome_arquivo, "a");
